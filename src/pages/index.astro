@@ -10,6 +10,7 @@ import { findPathItemByKey } from 'astro/dist/core/render/route-cache';
 
 const entries = await contentfulClient.getEntries<BlogPost>({
   content_type: "blogPost",
+  limit: 3,
 });
 
 const posts = entries.items.map((item) => {
@@ -26,11 +27,11 @@ const posts = entries.items.map((item) => {
 
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="TerraSearchGeo">
 	<main>
-		<h1>Terra Search Geo </h1>
+		<h1>Revealing the history beneath your feet. </h1>
 		<p class="instructions">
-			Blog Testing Website 
+			We provide a variety of survey techniques and expertise for archaeological and historical based projects.
 		</p>
 		<ul role="list" class="link-card-grid">
 			{posts.map((post) => (
