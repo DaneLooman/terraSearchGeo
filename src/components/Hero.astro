@@ -13,7 +13,7 @@ export interface Props {
 
 const { title, subTitle, imageURL, link, linkText, link2, linkText2, } = Astro.props;
 
-const cssURL = `url(${imageURL})`;
+const cssURL = `url(/${imageURL})`;
 ---
 
 <div id="hero">
