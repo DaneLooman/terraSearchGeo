@@ -3,6 +3,7 @@ import type { Document } from "@contentful/rich-text-types";
 
 export interface BlogPost {
   title: string;
+  type: string;
   date: string;
   description: string;
   content: Document;

@@ -27,6 +27,7 @@ export async function getStaticPaths() {
       title: item.fields.title,
       content: documentToHtmlString(item.fields.content, options),
       date: new Date(item.fields.date).toLocaleDateString(),
+      type: item.fields.type
     },
   }));
 
@@ -34,7 +35,7 @@ export async function getStaticPaths() {
 }
 
 
-const { content, title, date} = Astro.props;
+const { content, title, date, type} = Astro.props;
 ---
 
 <html lang="en">
@@ -43,6 +44,7 @@ const { content, title, date} = Astro.props;
   </head>
   <body>
     <h1>{title}</h1>
+    <p>{type}</p>
     <time>{date}</time>
     <article set:html={content} />
   </body>
