@@ -1,24 +1,37 @@
 ---
+import { Icon } from 'astro-icon';
+
 export interface Props {
 	text: string;
 	color: string;
 	hoverColor: string;
-    link: string;
+  link: string;
+  icon? : string;
 }
 
-const { text, color, hoverColor, link } = Astro.props;
+const { text, color, hoverColor, link, icon } = Astro.props;
 
 ---
 
-<a href={link} role="button" class="btn">{text}</a>
+<a href={link} role="button" class="btn">{icon && <Icon pack="feather" name={icon} />} {text}</a>
 
 <style define:vars={{ color, hoverColor }}>
+
+
+[astro-icon] {
+  height:1rem;
+  margin-right:4px;
+  margin-bottom:-2px;
+  display: inline-flex; 
+  flex-direction: row; 
+  align-items: end;
+}
 
 .btn{
   color:white;
   border:none;
-  margin: 1rem 1rem 0 1rem;
-  border-radius: 25px;
+  margin: 0 1rem 0 0;
+  border-radius: 0px;
   padding:12px 24px 12px 24px;
   cursor:pointer;
   transition: background-color 1s ease;

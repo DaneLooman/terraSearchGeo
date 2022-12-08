@@ -1,0 +1,50 @@
+---
+export interface Props {
+	src: string;
+    alt: string;
+	caption: string;
+    className?:string;
+}
+
+const { src, alt, caption, className } = Astro.props;
+
+---
+
+<div class={className + " polaroid"}>
+    <img src={src} alt={alt}>
+    <figcaption>{caption}</figcaption>
+</div>
+
+<style>
+    .polaroid{
+        padding:16px;
+        background-color: white;
+        text-align: center;
+        display:grid;
+        grid-template-rows: 90% 1fr;
+    }
+    .polaroid > img {
+        width: 100%;
+        height: auto;
+    }
+    .polaroid > figcaption {
+        margin-top:8px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Yuji Boku;
+        font-size: 16px;
+        font-weight: 400;
+        color:rgba(55, 91, 43, 1);
+    }
+
+    @media only screen and (max-width: 799px) {
+        .polaroid > figcaption {
+            display: none;
+        }
+
+        .polaroid {
+            max-width: 300px;
+        }
+    }
+</style>

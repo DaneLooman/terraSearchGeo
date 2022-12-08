@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon';
+
 export interface Props {
 	curPage: string;
 }
@@ -7,26 +9,28 @@ const { curPag } = Astro.props;
 ---
 <>
 <nav class="navbar" id="nav">
-    <a href="https://terrasearchgeo.com"><img src="/logo-nav.png" alt="Globe Logo with man pushing radar machine."></a>
+    <a href="/"><img src="/logo-nav.png" alt="Globe Logo with man pushing radar machine."></a>
     <div class="menu-toggle" id="mobile-menu">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </div>
     <ul class="nav" id="nav--links">
-      <li class="nav-item"><a href="#">Home<span class="slider"></span>  </a></li>
-      <li class="nav-item"><a href="#">News & Articles<span class="slider"></span>  </a></li>
-      <li class="nav-item"><a href="#">About Us<span class="slider"></span>  </a></li>
-      <li class="nav-item"><a href="#">Phone<span class="slider"></span>  </a></li>
-      <li class="nav-item"><a href="#">Email<span class="slider"></span>  </a></li>
+      <li class="nav-item"><a href="/">Home<span class="slider"></span></a></li>
+      <li class="nav-item"><a href="/#services">Services<span class="slider"></span></a></li>
+      <li class="nav-item"><a href="#">News & Articles<span class="slider"></span></a></li>
+      <li class="nav-item"><a href="#">About Us<span class="slider"></span></a></li>
+      <li class="nav-item"><a href="tel:555-666-7777"><Icon pack="feather" name="phone"/> 304-123-9876<span class="slider"></span></a></li>
+      <li class="nav-item"><a href="mailto:dave@TerrasearchGeo.com"><Icon pack="feather" name="mail"/> Email Us<span class="slider"></span></a></li>
     </ul>
 </nav>
 <div id="mobileNav">
-  <a href="#">Home</a>
+  <a href="/">Home</a>
+  <a href="/#services">Services</a>
   <a href="#">News & Articles</a>
   <a href="#">About Us</a>
-  <a href="#">Phone</a>
-  <a href="#">Email</a>
+  <a href="tel:555-666-7777"><Icon pack="feather" name="phone"/> 304-123-9876</a>
+  <a href="mailto:dave@TerrasearchGeo.com"><Icon pack="feather" name="mail"/> Email Us</a>
 </div>
 </>
 <style>
@@ -40,6 +44,16 @@ const { curPag } = Astro.props;
 
 /* NAVIGATION */
 
+[astro-icon] {
+  height:1rem;
+  margin-right:4px;
+  margin-bottom:-2px;
+  display: inline-flex; 
+  flex-direction: row; 
+  align-items: end;
+  color: rgba(254, 127, 45, 1);
+}
+
 .navbar {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -49,7 +63,7 @@ const { curPag } = Astro.props;
   overflow: hidden;
   z-index: 2;
   position: fixed;
-  background: rgba(22,36,17,.8);
+  background: rgba(55, 91, 43, .8);
   border-bottom: 1px solid rgba(92,92,89,.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);top:0;
@@ -87,7 +101,7 @@ const { curPag } = Astro.props;
     top:90%;
     margin:4px auto;
     height: 2px;
-    background-color: #375B2B;
+    background-color: rgba(254, 127, 45, 1);
     width: 0%;
     transition: width .25s ease;
 }
@@ -139,17 +153,17 @@ const { curPag } = Astro.props;
 #mobileNav{
   position:fixed;
   flex-direction: column;
-  justify-content:center;
+  justify-content:space-evenly;
   align-items:center;
   align-content: stretch;
-  padding-bottom:60px;
+  padding:auto 0;
   top:60px;
   transition: .5s;
   left: -100%;
   display:none;
   width:100%;
   height:calc(100dvh - 60px); 
-  background: rgba(38,38,36,.6);
+  background: rgba(55, 91, 43, .8);
   border-bottom: 1px solid rgba(92,92,89,.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
