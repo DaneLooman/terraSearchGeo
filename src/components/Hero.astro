@@ -3,6 +3,7 @@ import Button from "../components/Button.astro";
 
 export interface Props {
 	title: string;
+    title2?: string;
 	subTitle: string;
 	imageURL: string;
     link?: string;
@@ -11,13 +12,13 @@ export interface Props {
     linkText2?: string;
 }
 
-const { title, subTitle, imageURL, link, linkText, link2, linkText2, } = Astro.props;
+const { title, title2, subTitle, imageURL, link, linkText, link2, linkText2, } = Astro.props;
 
 const cssURL = `url(/${imageURL})`;
 ---
 
 <div id="hero">
-    <h1>{title}</h1>
+    <h1>{title}<br>{title2}</h1>
     <div class="hero--text">
         <h2>{subTitle}</h2>
         {link && linkText && <Button color="#375B2B" hoverColor="#2c4922" text={linkText} link={link}> </Button>}
@@ -28,6 +29,7 @@ const cssURL = `url(/${imageURL})`;
 <style define:vars={{cssURL}}>
     #hero{
         width: 100%;
+        height:100%;
         height: calc(100dvh - 160px);
         background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), var(--cssURL);
         background-position: center;
@@ -45,11 +47,10 @@ const cssURL = `url(/${imageURL})`;
 		font-weight: 800;
 		margin: 0;
         color:white;
-        padding-right:25%;
     }
 
     .hero--text {
-        background: rgba(38,38,36,.6);
+        background: rgba(22,36,17,.8);
         border: 1px solid rgba(92,92,89,.5);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);top:0;
@@ -79,7 +80,8 @@ const cssURL = `url(/${imageURL})`;
             justify-content: center;
             row-gap: 48px;
             padding: 98px 24px 0px 24px;
-            height: calc(100dvh - 24px);
+            height:100%;
+            height: 100dvh;
         }
 
         #hero > h1{
@@ -92,10 +94,6 @@ const cssURL = `url(/${imageURL})`;
         .hero--text {
             align-self: auto;
             
-        }
-
-        .hero--text > h2{
-        
         }
 
     }

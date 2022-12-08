@@ -1,0 +1,57 @@
+---
+import Card from "./Card.astro";
+import { contentfulClient } from "../lib/contentful.js";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import type { Document } from "@contentful/rich-text-types";
+import type { BlogPost } from "../lib/contentful";
+import { findPathItemByKey } from 'astro/dist/core/render/route-cache';
+
+const entries = await contentfulClient.getEntries<BlogPost>({
+  content_type: "blogPost",
+  limit: 4,
+});
+
+const posts = entries.items.map((item) => {
+  const { title, date, description, slug, image, type } = item.fields;
+  return {
+    title,
+    slug,
+    description,
+    date: new Date(date).toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
+	imageDesc: image.fields.description,
+	imageURL: image.fields.file.url,
+	type
+  };
+});
+---
+
+<div id="posts--container">
+    <h2>Latest News and Articles</h2>
+    {posts.map((post) => (
+        <Card href={`./posts/${post.slug}`}
+            tag={post.type}
+            title={post.title}
+            body={post.description}
+            imageUrl={post.imageURL}
+            imageDesc={post.imageDesc}
+            date={post.date}
+        ></Card>
+    ))}
+</div>
+
+<style>
+  #posts--container{
+    width:100%;
+    padding:48px 160px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color: #101b0d;
+    color:white;
+  }
+  h2{
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+</style>
