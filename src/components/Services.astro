@@ -16,18 +16,16 @@ import { Icon } from 'astro-icon';
         <a href="#" onclick="return false;" class="service" data-serviceCard="6">Cadaver Dog Surveys <Icon pack="feather" name="arrow-right"/></a>
         <a href="#" onclick="return false;" class="service" data-serviceCard="7">Sediment Coring <Icon pack="feather" name="arrow-right"/></a>
         <a href="#" onclick="return false;" class="service" data-serviceCard="8">Geographic and Information Systems <Icon pack="feather" name="arrow-right"/></a>
-        <div class="services--picker__mobile" >
-            <select id="services--picker__mobile">
-              <option value="0">Ground Penetrating Radar </option>
-              <option value="1">Magnetometer</option>
-              <option value="2">Metal Detecting</option>
-              <option value="3">Unmanned Aerial Vehicle Surveys</option>
-              <option value="4">LiDAR Analysis </option>
-              <option value="5">Cadaver Dog Surveys</option>
-              <option value="6">Sediment Coring</option>
-              <option value="7">Geographic and Information Systems</option>
-            </select>
-          </div>        
+        <select id="services--picker__mobile">
+            <option value="0">Ground Penetrating Radar </option>
+            <option value="1">Magnetometer</option>
+            <option value="2">Metal Detecting</option>
+            <option value="3">Unmanned Aerial Vehicle Surveys</option>
+            <option value="4">LiDAR Analysis </option>
+            <option value="5">Cadaver Dog Surveys</option>
+            <option value="6">Sediment Coring</option>
+            <option value="7">Geographic and Information Systems</option>
+        </select>    
     </div>
     
     <div id="services--info">
@@ -241,16 +239,16 @@ import { Icon } from 'astro-icon';
         line-height: 27px;
         letter-spacing: -0.015em;
         margin: 24px 32px 24px 0px ;
-        text-align: justify;
+        text-align: left;
     }
 
     .pushUpRight{
-        margin-right: -96px;
+        margin-right: -80px;
         margin-top: -64px;
         height: fit-content;
     }
 
-    .services--picker__mobile {
+    #services--picker__mobile {
         display:none;
     }
 
@@ -273,6 +271,7 @@ import { Icon } from 'astro-icon';
         }
         #services--picker > h2 {
             grid-column: 1 / span 2;
+            font-size: 2rem;
         }
 
     }
@@ -287,9 +286,15 @@ import { Icon } from 'astro-icon';
         .service{
             display: none;
         }
-        .services--picker__mobile {
+        #services--picker__mobile {
             display: block;
-            widows: 100%;
+            width: 100%;
+            grid-column: span 2;
+            font-size:1rem;
+            font-weight: bold;
+            padding:4px 8px;
+            color:#375B2B;
+            border-color: #375B2B;
         }
         #services--info {
             flex-direction: column;
@@ -317,6 +322,7 @@ import { Icon } from 'astro-icon';
 
         .service--textContain > p {
             margin:0;
+            margin-bottom:16px;
         }
 
         .service--textContain > h3 {

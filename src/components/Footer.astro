@@ -1,0 +1,126 @@
+---
+import { Icon } from 'astro-icon';
+---
+<footer>
+    <div class="footer--main">
+        <img src="./logoFooter.png" alt="Circular Terrasearch Geophysical Logo. A globe with a man operating a ground penetrating radar and a UAV drone.">
+        <ul>
+            <li><a href="tel:+8606177345">860-617-7345</a></li>
+            <li><a href="mailto:Dave@TerrrasearchGeo.com">Dave@TerrrasearchGeo.com</a></li>
+            <li><p>P.O Box XXXXX</p></li>
+            <li><p>City, CT 1234</p></li>
+        </ul>
+        <ul class="right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="">Archives</a></li>
+            <li><a href="">About Us</a></li>
+        </ul>
+    </div>
+    <hr>    
+    <div class="footer--social">
+        <a href=""><Icon pack="feather" name="facebook"/><span class="slider"></span></a>
+        <a href=""><Icon pack="feather" name="linkedin"/><span class="slider"></span></a>
+        <a href=""><Icon pack="feather" name="twitter"/><span class="slider"></span></a>
+        <a href=""><Icon pack="feather" name="instagram"/><span class="slider"></span></a>
+    </div>
+    <p>© TerraSearch Geophysical 2022</p>
+</footer>
+<style>
+    
+    [astro-icon] {
+        color:#375B2B;  
+        height:32px;
+        display: inline-flex;
+    }
+    footer{
+        border-top:1px solid rgba(0, 0, 0, 0.3);
+        text-align: center;
+        margin:auto;
+        padding: 48px 160px 96px 160px;
+        color:rgba(0, 0, 0, 0.8);
+
+    }
+    .footer--main{
+        width:100%;
+        display:flex;
+        flex-direction: row;
+        justify-content:center;
+        column-gap: 96px;
+    }
+    p{
+        color:rgba(0, 0, 0, 0.8);
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: -0.015em;
+    }
+    hr{
+        background: rgba(0, 0, 0, 0.5);
+        margin: 47px 0px;
+    }
+    ul{
+        text-align: left;
+        list-style-type: none;
+        width:fit-content;
+        margin: auto 0;
+        padding: 0;
+        
+    }
+    li {
+        text-decoration: none;
+        padding: 8px 0;
+    }
+    .footer--social{
+        display:flex;
+        width:100;
+        justify-content: center;
+    }
+    a {
+        color:rgba(0, 0, 0, 0.8);
+        text-decoration: none;
+        position:relative;
+    }
+    .footer--social > a {
+        margin: 0 16px 16px 16px;
+    }
+    .slider {
+        display:block;
+        margin:4px auto;
+        height: 4px;
+        background-color: rgba(254, 127, 45, 1);
+        width: 0%;
+        transition: width .25s ease;
+    }
+
+    a:hover > .slider {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 800px) { 
+        footer{       
+            padding:24px 24px 120px 24px;
+        }
+        .footer--main {
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            column-gap: 0;
+        }
+        img {
+            grid-column: 2 span;
+            justify-self: center;
+            margin-bottom:16px;
+        }
+        .right{
+            text-align: right;
+            justify-self:end;
+        }
+        hr{
+            margin:16px 0;
+        }
+        a{
+            padding: 14px 0;
+        }
+    }
+
+</style>

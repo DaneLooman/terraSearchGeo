@@ -26,7 +26,11 @@ const posts = entries.items.map((item) => {
 ---
 
 <div id="posts--container">
+  <div>
     <h2>Latest News and Articles</h2>
+    <div class="postcard__bar"></div>
+  </div>
+    
     {posts.map((post) => (
         <Card href={`./posts/${post.slug}`}
             tag={post.type}
@@ -42,20 +46,30 @@ const posts = entries.items.map((item) => {
 <style>
   #posts--container{
     width:100%;
-    padding:48px 160px;
+    padding:32px 160px;
     display: flex;
     flex-direction: column;
     align-items:center;
     background-color: #fcfcf5;
     color:white;
   }
+
+  .postcard__bar {
+    width: calc(100% - 16px);
+    margin: 0 8px 2rem 8px;
+    height: 3px;
+    border-radius: 5px;
+    background-color: #FE7F2D;
+    transition: width 0.2s ease;
+  }
+
   h2{
     text-align: center;
-    font-size: 3rem;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    margin-bottom: 0;
     color: #375B2B;
   }
   @media screen and (max-width: 1099px) {
-    #posts--container{padding: 24px;}
+    #posts--container{padding: 24px 32px;}
   }
 </style>
