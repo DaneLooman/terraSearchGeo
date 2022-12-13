@@ -25,12 +25,12 @@ const { curPag } = Astro.props;
     </ul>
 </nav>
 <div id="mobileNav">
-  <a href="/">Home</a>
-  <a href="/#services">Services</a>
-  <a href="#">News & Articles</a>
-  <a href="#">About Us</a>
-  <a href="tel:555-666-7777"><Icon pack="feather" name="phone"/> 304-123-9876</a>
-  <a href="mailto:dave@TerrasearchGeo.com"><Icon pack="feather" name="mail"/> Email Us</a>
+  <a href="/" class="mobileAnchor">Home</a>
+  <a href="/#services" class="mobileAnchor">Services</a>
+  <a href="#" class="mobileAnchor">News & Articles</a>
+  <a href="#" class="mobileAnchor">About Us</a>
+  <a href="tel:555-666-7777" class="mobileAnchor"><Icon pack="feather" name="phone"/> 304-123-9876</a>
+  <a href="mailto:dave@TerrasearchGeo.com" class="mobileAnchor"><Icon pack="feather" name="mail"/> Email Us</a>
 </div>
 </>
 <style>
@@ -156,13 +156,13 @@ const { curPag } = Astro.props;
   justify-content:space-evenly;
   align-items:center;
   align-content: stretch;
-  padding:auto 0;
+  padding:auto 0 0;
   top:60px;
   transition: .5s;
   left: -100%;
   display:none;
   width:100%;
-  height:calc(100dvh - 60px); 
+  height:calc(100svh - 60px); 
   background: rgba(55, 91, 43, .8);
   border-bottom: 1px solid rgba(92,92,89,.9);
   backdrop-filter: blur(10px);
@@ -173,11 +173,11 @@ const { curPag } = Astro.props;
 }
 
 #mobileNav > a {
-  font-size: 2.2rem;
+  font-size: 28px;
   text-decoration: none;
   color: white;
   text-align: center;
-  padding: 1.8rem;
+  padding: 8px;
 }
 
 #mobileNav.show{
@@ -264,5 +264,15 @@ const { curPag } = Astro.props;
         document.getElementById("mobile-menu").classList.toggle("is-active");
         document.getElementById("mobileNav").classList.toggle("show");
     });
+
+    const anchors = document.getElementsByClassName('mobileAnchor');
+        for(var i = 0; i < anchors.length; i++) {
+            var anchor = anchors[i];
+            anchor.onclick = function() {
+              document.getElementById("mobile-menu").classList.toggle("is-active");
+              document.getElementById("mobileNav").classList.toggle("show");
+            }
+        }
+
 
 </script>

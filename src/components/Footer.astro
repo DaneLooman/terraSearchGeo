@@ -75,6 +75,9 @@ import { Icon } from 'astro-icon';
         width:100;
         justify-content: center;
     }
+    li > a:hover {
+        border-bottom:2px solid rgba(254, 127, 45, 1);
+    }
     a {
         color:rgba(0, 0, 0, 0.8);
         text-decoration: none;
@@ -98,7 +101,7 @@ import { Icon } from 'astro-icon';
 
     @media only screen and (max-width: 800px) { 
         footer{       
-            padding:24px 24px 120px 24px;
+            padding:48px 24px 64px 24px;
         }
         .footer--main {
             display:grid;

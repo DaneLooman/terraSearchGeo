@@ -1,0 +1,96 @@
+---
+import SmallCard from "./SmallCard.astro";
+import { contentfulClient } from "../lib/contentful.js";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import type { Document } from "@contentful/rich-text-types";
+import type { BlogPost } from "../lib/contentful";
+import { findPathItemByKey } from 'astro/dist/core/render/route-cache';
+
+const entries = await contentfulClient.getEntries<BlogPost>({
+  content_type: "blogPost",
+  limit: 4,
+});
+
+const posts = entries.items.map((item) => {
+  const { title, date, description, slug, image, type } = item.fields;
+  return {
+    title,
+    slug,
+    description,
+    date: new Date(date).toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
+	imageDesc: image.fields.description,
+	imageURL: image.fields.file.url,
+	type
+  };
+});
+---
+
+<div id="posts--container">
+  <div>
+    <h2>Latest News and Articles</h2>
+    <div class="postcard__bar"></div>
+  </div>
+  <div id="posts--container--posts">
+    {posts.map((post) => (
+        <SmallCard href={`./posts/${post.slug}`}
+            tag={post.type}
+            title={post.title}
+            body={post.description}
+            imageUrl={post.imageURL}
+            imageDesc={post.imageDesc}
+            date={post.date}
+        ></SmallCard>
+    ))}
+  </div>
+</div>
+
+<style>
+    h2{
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 0;
+        color: #375B2B;
+    }
+    .postcard__bar{
+        width: calc(100% - 16px);
+        margin: 0 8px 40px 8px;
+        height: 3px;
+        border-radius: 5px;
+        background-color: #FE7F2D;
+        transition: width 0.2s ease;
+    }
+    #posts--container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        margin: 40px auto 80px auto;
+    }
+    #posts--container--posts{
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-items: center;
+        column-gap: 32px;
+    
+    }
+
+    @media screen and (max-width: 1500px) {
+        #posts--container--posts{
+            grid-template-columns: repeat(2, auto);
+            row-gap: 32px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        #posts--container--posts{
+            grid-template-columns: repeat(1, auto);
+            row-gap: 32px;
+        }
+    }
+
+
+
+  
+</style>

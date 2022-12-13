@@ -1,0 +1,192 @@
+---
+import { Icon } from 'astro-icon';
+export interface Props {
+	title: string;
+	tag:string;
+	body: string;
+	href: string;
+	imageUrl: string;
+	imageDesc: string;
+	date:string;
+}
+
+const { href, title, tag, body, imageUrl, imageDesc,date } = Astro.props;
+
+const cssURL = `url(/${imageUrl}?w=330)`;
+const tagFix = tag.replace(/\s/g, '');
+---
+
+<article class="postcard">
+	<a class="postcard__img_link" href={href} aria-description={imageDesc}></a>
+	<div class={`postcard__text postcard__text__${tagFix}`}>
+        <div class={tagFix}>{tag}</div>
+		<h3 class={`postcard__title`}><a href={href} class={`${tagFix}__Color`}>{title}</a></h3>
+		<time datetime="2020-05-25 12:00:00"><Icon pack="feather" name="calendar"/>{date}</time>
+		<div class={`postcard__bar ${tagFix}__BgColor`}></div>
+		<div class="postcard__preview-txt">{body}</div>
+        <a href="#" class={`${tagFix}__Color readMore`}>Read More...</a>
+	</div>
+</article>
+
+<style define:vars={{cssURL}}>
+    [astro-icon] {
+        height:11px;
+        margin-right:4px;
+        margin-bottom:-1px;
+        display: inline-flex; 
+        flex-direction: row; 
+        align-items: end;
+    }
+
+    a {
+        text-decoration: none;
+        width: 330px;
+        color:#000;
+        transition: all ease-in .2s;
+    }
+    h3{
+        margin-bottom:4px;
+    }
+    time{
+        font-size: 11px;
+        color:#a3a9ab;
+    }
+    .postcard__bar{
+        width: 50px;
+        height: 4px;
+        margin: 12px 0 10px 0;
+        border-radius: 5px;
+        background-color: #FE7F2D;
+        transition: width 0.5s ease;
+    }
+    .postcard{
+        width:100%;
+        max-width: 330px;
+        box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+        transition: box-shadow .3s;
+        border-radius: 0 0 8px 8px;
+        
+    }
+    .postcard:hover {
+        box-shadow: 0 0 20px rgb(0 0 0 / 30%);
+	}
+
+    .postcard:hover .postcard__bar {
+        width: 50%;
+	}
+
+    .postcard__img_link{
+        display: block;
+        height:220px;
+        background-image: var(--cssURL); 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 8px 8px 0 0 ;
+    }
+    .postcard__text{
+        padding:16px;
+        position: relative;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .readMore {
+        display: block;
+        color:grey;
+        margin-top:12px;
+        width:fit-content;
+    }
+
+    /* Colors by Tag Name - Announcment, IntheNews, FieldStudy */
+    .postcard__text__Announcement{
+        border-top:4px solid #FE7F2D;
+    }
+    .postcard__text__Announcment:hover{
+        border-top:4px solid #FE7F2D;
+    }
+    .Announcement{
+        position: absolute;
+        top:-27px;
+        background-color: #FE7F2D;
+        color: #000;
+        width:fit-content;
+        padding:4px 8px;
+    }
+    .Announcement__Color{
+        color: #FE7F2D;
+    } 
+    .Announcement__BgColor{
+        background-color: #FE7F2D;
+    } 
+    .Announcement__Color:hover{
+        color: #FE7F2D;
+    }   
+
+    h3 > .Announcement__Color{
+        color: #000;
+    }
+
+    .postcard__text__IntheNews{
+        border-top:4px solid red;
+    }
+    .postcard__text__IntheNews:hover{
+        border-top:4px solid red;
+    }
+    .IntheNews{
+        position: absolute;
+        top:-27px;
+        background-color: red;
+        color: #000;
+        width:fit-content;
+        padding:4px 8px;
+    }
+    .IntheNews__Color{
+        color: red;
+    }
+    .IntheNews__BgColor{
+        background-color: red;
+    } 
+    h3 >  .IntheNews__Color{
+        color: #000;
+    }
+    .IntheNews__Color:hover{
+        color: red;
+    }
+
+    .postcard__text__FieldStudy{
+        border-top:4px solid green;
+    }
+    .postcard__text__FieldStudy:hover{
+        border-top:4px solid green;
+    }
+    .FieldStudy{
+        position: absolute;
+        top:-27px;
+        background-color: green;
+        color: #000;
+        width:fit-content;
+        padding:4px 8px;
+    }
+    .FieldStudy__Color{
+        color: green;
+    }
+    .FieldStudy__BgColor{
+        background-color: green;
+    } 
+    h3 >  .FieldStudy__Color{
+        color: #000;
+    }
+    .FieldStudy__Color:hover{
+        color: green;
+    }
+
+
+
+@media screen and (min-width: 1024px) {
+}
+@media screen and (min-width: 769px) {
+}
+
+</style>
