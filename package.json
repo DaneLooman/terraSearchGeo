@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^15.13.1",
+    "@fontsource/montserrat": "^4.5.13",
     "astro": "^1.6.11",
     "astro-icon": "^0.8.0",
     "contentful": "^9.2.13"

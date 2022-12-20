@@ -4,14 +4,16 @@ import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
 import ArticleCarousel from '../components/ArticleCarousel.astro';
 import SmallArticleCarousel from '../components/SmallArticleCarousel.astro';
+import '../styles/global.css';
+import Process from '../components/Process.astro';
 ---
 
 <Layout title="TerraSearchGeo">
 	<main>
 		<Hero 
-			title="Revealing the History " 
-			title2="Beneath Your Feet"
-			subTitle="Providing a variety of survey techniques and expertise for your archaeological and historical based projects" 
+			title="Revealing the history" 
+			title2="beneath your feet"
+			subTitle="We provide a variety of survey techniques and expertise for archaeological and historical based projects" 
 			imageURL="hero.jpg"	
 			link="www.google.com"
 			linkText="Call Us"
@@ -19,7 +21,7 @@ import SmallArticleCarousel from '../components/SmallArticleCarousel.astro';
 			linkText2="Email Us"
 		></Hero>
 		<Services></Services>
-		<ArticleCarousel></ArticleCarousel>
+		<Process></Process>
 		<SmallArticleCarousel></SmallArticleCarousel>
 	</main>
 </Layout>

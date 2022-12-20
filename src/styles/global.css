@@ -1,0 +1,11 @@
+
+/* Register our custom font family and tell the browser where to find it. */
+h1, h2, h3, h4, p, a {
+    font-family: 'Montserrat', sans-serif;
+}
+h1 {
+    font-weight: 900;
+}
+p, a {
+    font-weight: 400;
+}

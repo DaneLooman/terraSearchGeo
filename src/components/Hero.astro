@@ -18,9 +18,9 @@ const cssURL = `url(/${imageURL})`;
 ---
 
 <div id="hero">
-    <h1>{title}<br>{title2}</h1>
     <div class="hero--text">
-        <h2>{subTitle}</h2>
+        <h1>{title}<br><span class="orange">{title2}</span></h1>
+        <p>{subTitle}</p>
         {link && linkText && <Button color="#FE7F2D" hoverColor="#cb6624" text={linkText} link={link} icon="phone"> </Button>}
         {link2 && linkText2 && <Button color="#FE7F2D" hoverColor="#cb6624" text={linkText2} link={link2} icon="mail"> </Button>}   
     </div>
@@ -41,37 +41,43 @@ const cssURL = `url(/${imageURL})`;
         /* row-gap: 5rem; */
     }
 
-    #hero > h1 {
-        font-size: 4.6rem;
-		font-weight: 800;
+    #hero h1 {
+        font-size: 3.4rem;
 		margin: 0;
         color:white;
+        margin-bottom:16px;
+        line-height:5rem;
+    }
+
+    .orange{
+        color:rgba(254, 127, 45, 1);
     }
 
     .hero--text {
-        background: rgba(55, 91, 43, .5);
-        border: 1px solid rgba(92,92,89,.5);
+        background: rgba(40, 66, 31, .8);
+        /* border: 3px solid rgba(254, 127, 45, 1); */
+        border: 3px solid rgba(254, 127, 45, 1);
+        border-radius: 8px;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);top:0;
         color: white;
         width: auto;
         align-self: flex-end;
-        max-width: 600px;
-        padding:32px;
+        max-width: 730px;
+        padding:56px 24px;
         text-align: center;
         box-sizing: border-box;
     }
 
-    .hero--text > h2 {
-        font-family: Pragmatica,sans-serif;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 164%;
-        letter-spacing: .02em;
+    .hero--text > p {
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: -0.015em;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         text-size-adjust: none;
-        margin-bottom:24px;
+        margin:0 auto 32px auto;
+        max-width: 80%;
     }
 
     @media only screen and (max-width: 1200px) { 
@@ -85,36 +91,56 @@ const cssURL = `url(/${imageURL})`;
             height: calc(100svh - 50px);
         }
 
-        #hero > h1{
+        #hero h1{
             font-size: 2.6rem;
             margin:0px;
+            margin-bottom:24px;
             text-align: center;
             padding: 0;
+            line-height:3.2rem;
         }
 
         .hero--text {
             align-self: auto;
-            padding:16px;
+            padding:32px 16px;
             
         }
 
+    }
+
+    @media only screen and (max-width: 800px) { 
+        .hero--text {
+            padding:48px 8px;
+            
+        }
+        #hero h1{
+            font-size: 1.6rem;
+            line-height: 2.6rem;
+        }
     }
 
     @media only screen and (max-height: 500px) { 
         #hero {
             row-gap: 32px;
             padding-top: 50px;
+            height:100vh;
         }
 
-        #hero > h1{
+        #hero h1{
             font-size: 2rem;
             margin:0px;
+            margin-bottom: 12px;
             text-align: center;
             padding: 0;
         }
 
         .hero--text {
-            padding:16px;
+            padding:16px 8px;
+        }
+
+        .hero--text p {
+            font-size: 16px;
+            margin-bottom: 16px;
         }
     }
 
