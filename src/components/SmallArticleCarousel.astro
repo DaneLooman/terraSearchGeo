@@ -27,7 +27,7 @@ const posts = entries.items.map((item) => {
 
 <div id="posts--container">
   <div>
-    <h2>Latest News and Articles</h2>
+    <h2>Latest News & Articles</h2>
     <div class="postcard__bar"></div>
   </div>
   <div id="posts--container--posts">
@@ -47,13 +47,14 @@ const posts = entries.items.map((item) => {
 <style>
     h2{
         text-align: center;
-        font-size: 2rem;
+        font-weight: 400;
+        font-size: 3rem;
         margin-bottom: 0;
         color: #375B2B;
     }
     .postcard__bar{
         width: calc(100% - 16px);
-        margin: 0 8px 40px 8px;
+        margin: 0 8px 48px 8px;
         height: 3px;
         border-radius: 5px;
         background-color: #FE7F2D;
@@ -87,6 +88,9 @@ const posts = entries.items.map((item) => {
         #posts--container--posts{
             grid-template-columns: repeat(1, auto);
             row-gap: 32px;
+        }
+        h2{
+          font-size: 32px;
         }
     }
 

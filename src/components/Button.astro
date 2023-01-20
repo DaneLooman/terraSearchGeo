@@ -28,18 +28,17 @@ const { text, color, hoverColor, link, icon } = Astro.props;
 }
 
 .btn{
-  color:#000;
-  border:none;
   margin: 0 1rem 0 0;
-  border-radius: 0px;
   padding:12px 24px 12px 24px;
   cursor:pointer;
-  transition: background-color 1s ease;
+  background-color: rgba(55, 91, 43, 1);
+  transition: all .5s ease;
   text-decoration: none;
-  background-color: var(--color);
+  color: var(--color);
+  border:2px solid var(--color);
   box-sizing: border-box;
   display:inline-block;
-  border: 1px solid rgba(92,92,89,.5);
+  border-radius: 6px;
 }
 
 .btn:focus{
@@ -48,8 +47,9 @@ const { text, color, hoverColor, link, icon } = Astro.props;
 }
 
 .btn:hover{
-  transition: background-color 1s ease;
-  background-color: var(--hoverColor);
+  transition: color .5s ease, border .5s ease;
+  color: var(--hoverColor);
+  border:2px solid var(--hoverColor);
 }
 
 @media only screen and (max-width: 1100px) {

@@ -7,7 +7,10 @@ import { Icon } from 'astro-icon';
 
 <section id="services">
     <div id="services--picker">
-        <h2>Our Services</h2>
+        <div class="title">
+            <h2>Our Services</h2>
+            <div class="bar"></div>
+        </div> 
         <a href="#" onclick="return false;" class="service selected" data-serviceCard="1">Ground Penetrating Radar <Icon pack="feather" name="arrow-right"/></a>
         <a href="#" onclick="return false;" class="service" data-serviceCard="2">Magnetometer <Icon pack="feather" name="arrow-right"/></a>
         <a href="#" onclick="return false;" class="service" data-serviceCard="3">Metal Detecting <Icon pack="feather" name="arrow-right"/></a>
@@ -34,7 +37,7 @@ import { Icon } from 'astro-icon';
                 <h3>Ground Penetrating Radar</h3>
                 <p>Ground Penetrating Radar surveys are a non-invasive way to measure the differences in dielectric properties of buried materials and layers of the earth; by measuring these properties, we can map out interruptions in soil sequences caused by human or natural processes. We regularly utilize a variety of GPR antennas to accurately map cemeteries, prospect for unmarked graves, and archaeological sites.
                 </p>
-                <Button color="#FE7F2D" hoverColor="#e57229" link="google.com" text="View Case Study" ></Button>
+                <Button color="#FE7F2D" hoverColor="#fff" link="google.com" text="View Case Study" ></Button>
             </div>
             <Polaroid className="pushUpRight" src="hero.jpg" alt="ground penetrating radar machine used on lawn" caption="Ground Penetrating Radar"></Polaroid>
         </div>
@@ -42,7 +45,7 @@ import { Icon } from 'astro-icon';
             <div class="service--textContain">
                 <h3>Magnetometer</h3>
                 <p>Magnetometers measure variations in the Earth's magnetic field by detecting the magnetic properties of materials buried in the ground or at the surface.  Magnetic materials in historical-period sites are most likely to be iron or ferrous artifacts commonly found within soils, but also structural remains (if lined with magnetic fieldstones) and the midden or fill deposits buried within these structures.  Magnetometer surveys are particularly useful for historical period sites, as well as pre-contact Native American sites, and work best in conjunction with other geophysical methods, such as GPR.</p>
-                <Button color="#FE7F2D" hoverColor="#e57229" link="google.com" text="View Case Study" ></Button>
+                <Button color="#FE7F2D" hoverColor="#fff" link="google.com" text="View Case Study" ></Button>
             </div>
             <Polaroid className="pushUpRight" src="hero.jpg" alt="ground penetrating radar machine used on lawn" caption="Ground Penetrating Radar"></Polaroid>
         </div>
@@ -50,7 +53,7 @@ import { Icon } from 'astro-icon';
             <div class="service--textContain">
                 <h3>Metal Detecting</h3>
                 <p>Similar to a magnetometer survey, metal detectorists use machines to survey a property for historical period artifact concentrations for a variety of metal types.  These concentrations can be mapped via Geographical and Information Systems to accurately pinpoint locations of buried structures or archaeological features.  Metal detector surveys will most likely require an archaeological permit from local or state agencies. </p>
-                <Button color="#FE7F2D" hoverColor="#e57229" link="google.com" text="View Case Study" ></Button>
+                <Button color="#FE7F2D" hoverColor="#fff" link="google.com" text="View Case Study" ></Button>
             </div>
             <Polaroid className="pushUpRight" src="hero.jpg" alt="ground penetrating radar machine used on lawn" caption="Ground Penetrating Radar"></Polaroid>
         </div>
@@ -59,7 +62,7 @@ import { Icon } from 'astro-icon';
                 <h3>Unmanned Aerial Vehicle Surveys</h3>
                 <p>Unmanned Aerial Vehicles (UAVs or drones) are used to capture images of a project area and reveal potentially hidden surface features.  Similar to LiDAR, drone images are stitched together using photogrammetric software to create digital elevation models and high resolution images of project areas.  Depending on local or state regulations, balloons, kites, or ladders can be substituted to capture imagery of a project area.
                 </p>
-                <Button color="#FE7F2D" hoverColor="#e57229" link="google.com" text="View Case Study" ></Button>
+                <Button color="#FE7F2D" hoverColor="#fff" link="google.com" text="View Case Study" ></Button>
             </div>
             <Polaroid className="pushUpRight" src="hero.jpg" alt="ground penetrating radar machine used on lawn" caption="Ground Penetrating Radar"></Polaroid>
         </div>
@@ -67,7 +70,7 @@ import { Icon } from 'astro-icon';
             <div class="service--textContain">
                 <h3>LiDAR Analysis</h3>
                 <p>Light Detection and Ranging (LiDAR) surveys use data from low altitude flights or drones to remotely image the ground surface.  LiDAR can be extremely useful for detecting evidence of historical land practices (stone walls and cellar holes), as well as to understand the geomorphology and archaeological potential of a project area. </p>
-                <Button color="#FE7F2D" hoverColor="#e57229" link="google.com" text="View Case Study" ></Button>
+                <Button color="#FE7F2D" hoverColor="#ff" link="google.com" text="View Case Study" ></Button>
             </div>
             <Polaroid className="pushUpRight" src="hero.jpg" alt="ground penetrating radar machine used on lawn" caption="Ground Penetrating Radar"></Polaroid>
         </div>
@@ -75,7 +78,7 @@ import { Icon } from 'astro-icon';
             <div class="service--textContain">
                 <h3>Cadaver Dog Surveys</h3>
                 <p>TerraSearch regularly partners with Cadaver Dog organizations to provide a second or third line of evidence when prospecting for unmarked burials within a project area, depending on local or state regulations.  Dogs are trained to recognize and indicate the six specific scents associated with human decomposition.</p>
-                <Button color="#FE7F2D" hoverColor="#e57229" link="google.com" text="View Case Study" ></Button>
+                <Button color="#FE7F2D" hoverColor="#fff" link="google.com" text="View Case Study" ></Button>
             </div>
             <Polaroid className="pushUpRight" src="hero.jpg" alt="ground penetrating radar machine used on lawn" caption="Ground Penetrating Radar"></Polaroid>
         </div>
@@ -91,7 +94,7 @@ import { Icon } from 'astro-icon';
             <div class="service--textContain">
                 <h3>Geographic and Information Systems</h3>
                 <p>All of our work is done in conjunction with high-resolution Geographic and Information Systems (GIS), including decimeter accurate GPS locational data.  Common uses include overlaying historical maps and aerial photographs of project areas to provide multiple lines of evidence for survey goals.  When our work is completed, we provide each client with highly-accurate maps and coordinates of any mapped features, as well as survey areas. </p>
-                <Button color="#FE7F2D" hoverColor="#e57229" link="google.com" text="View Case Study" ></Button>
+                <Button color="#FE7F2D" hoverColor="#fff" link="google.com" text="View Case Study" ></Button>
             </div>
             <Polaroid className="pushUpRight" src="hero.jpg" alt="ground penetrating radar machine used on lawn" caption="Ground Penetrating Radar"></Polaroid>
         </div>
@@ -152,20 +155,30 @@ import { Icon } from 'astro-icon';
     }
 
     #services--picker{
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.9);
         width: 100%;
         padding:24px 64px;
     }
 
-    #services--picker > h2 {
+    #services--picker > .title {
+        width:fit-content;
+        margin-bottom:32px;
+    }
+
+    #services--picker > .title > h2 {
         font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 800;
-        font-size: 1.6rem;
-        line-height: 36px;
-        letter-spacing: -0.015em;
-        color: #375B2B;
-        margin-bottom:16px;
+        font-weight: 400;
+        font-size: 3rem;
+        color: #375B2B;    
+        padding:0px;
+        width: fit-content;
+    }
+
+    .bar{
+        height: 2px;
+        width: 95%;
+        margin: 2px auto 0 auto;
+        background-color: rgba(254,127,45,1);
     }
 
     .service{
@@ -179,6 +192,7 @@ import { Icon } from 'astro-icon';
         transition: color 0.2s ease;
         cursor: pointer;
         text-decoration: none;
+        width: fit-content;
     }
 
     .service > [astro-icon] {
@@ -188,10 +202,11 @@ import { Icon } from 'astro-icon';
         display: none; 
         flex-direction: row; 
         align-items: end;
+        color: rgba(254,127,45,1);;
     }
 
     .selected {
-        color: rgba(254, 127, 45, 1);
+        font-weight: 800;
     }
 
     .selected > [astro-icon] {
@@ -199,7 +214,7 @@ import { Icon } from 'astro-icon';
     }
 
     .service:hover{
-        color: rgba(254, 127, 45, 1);
+        color: rgba(0, 0, 0, 1);
     }
 
     .service:hover > [astro-icon] {
@@ -209,7 +224,7 @@ import { Icon } from 'astro-icon';
 
     #services--info{
         display: flex;
-        background-color: rgba(55, 91, 43, 0.8);
+        background: rgba(40, 66, 31, 0.9);
         padding: 32px 64px;
         color: white;
     }
@@ -229,6 +244,7 @@ import { Icon } from 'astro-icon';
         font-size: 1.6rem;
         letter-spacing: -0.015em;
         margin:0;
+        color: #fff;
     }
 
     .service--textContain > p {
@@ -269,9 +285,13 @@ import { Icon } from 'astro-icon';
             display:grid;
             grid-template-columns: 1fr 1fr;
         }
-        #services--picker > h2 {
+
+        #services--picker > .title {
             grid-column: 1 / span 2;
-            font-size: 2rem;
+        }
+
+        #services--picker > .title > h2 {   
+            font-size: 32px;
         }
 
     }

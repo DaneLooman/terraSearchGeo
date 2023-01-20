@@ -29,6 +29,12 @@ const tagFix = tag.replace(/\s/g, '');
 </article>
 
 <style define:vars={{cssURL}}>
+    /* 
+    #31425A -- Blue In the news
+    #28421f -- Green Annoucement
+    #776248 -- Tan Field Study
+    #251A0F -- Brown
+    */
     [astro-icon] {
         height:11px;
         margin-right:4px;
@@ -101,27 +107,27 @@ const tagFix = tag.replace(/\s/g, '');
 
     /* Colors by Tag Name - Announcment, IntheNews, FieldStudy */
     .postcard__text__Announcement{
-        border-top:4px solid #FE7F2D;
+        border-top:4px solid #28421f;
     }
     .postcard__text__Announcment:hover{
-        border-top:4px solid #FE7F2D;
+        border-top:4px solid #28421f;
     }
     .Announcement{
         position: absolute;
         top:-27px;
-        background-color: #FE7F2D;
-        color: #000;
+        background-color: #28421f;
+        color: #fff;
         width:fit-content;
         padding:4px 8px;
     }
     .Announcement__Color{
-        color: #FE7F2D;
+        color: #28421f;
     } 
     .Announcement__BgColor{
-        background-color: #FE7F2D;
+        background-color: #28421f;
     } 
     .Announcement__Color:hover{
-        color: #FE7F2D;
+        color: #28421f;
     }   
 
     h3 > .Announcement__Color{
@@ -129,57 +135,57 @@ const tagFix = tag.replace(/\s/g, '');
     }
 
     .postcard__text__IntheNews{
-        border-top:4px solid red;
+        border-top:4px solid #31425A ;
     }
     .postcard__text__IntheNews:hover{
-        border-top:4px solid red;
+        border-top:4px solid #31425A ;
     }
     .IntheNews{
         position: absolute;
         top:-27px;
-        background-color: red;
-        color: #000;
+        background-color: #31425A ;
+        color: #fff;
         width:fit-content;
         padding:4px 8px;
     }
     .IntheNews__Color{
-        color: red;
+        color: #31425A ;
     }
     .IntheNews__BgColor{
-        background-color: red;
+        background-color: #31425A ;
     } 
     h3 >  .IntheNews__Color{
         color: #000;
     }
     .IntheNews__Color:hover{
-        color: red;
+        color: #31425A ;
     }
 
     .postcard__text__FieldStudy{
-        border-top:4px solid green;
+        border-top:4px solid #776248;
     }
     .postcard__text__FieldStudy:hover{
-        border-top:4px solid green;
+        border-top:4px solid #776248;
     }
     .FieldStudy{
         position: absolute;
         top:-27px;
-        background-color: green;
-        color: #000;
+        background-color: #776248;
+        color: #fff;
         width:fit-content;
         padding:4px 8px;
     }
     .FieldStudy__Color{
-        color: green;
+        color: #776248;
     }
     .FieldStudy__BgColor{
-        background-color: green;
+        background-color: #776248;
     } 
     h3 >  .FieldStudy__Color{
         color: #000;
     }
     .FieldStudy__Color:hover{
-        color: green;
+        color: #776248;
     }
 
 

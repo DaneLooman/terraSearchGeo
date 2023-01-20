@@ -21,23 +21,23 @@ const cssURL = `url(/${imageURL})`;
     <div class="hero--text">
         <h1>{title}<br><span class="orange">{title2}</span></h1>
         <p>{subTitle}</p>
-        {link && linkText && <Button color="#FE7F2D" hoverColor="#cb6624" text={linkText} link={link} icon="phone"> </Button>}
-        {link2 && linkText2 && <Button color="#FE7F2D" hoverColor="#cb6624" text={linkText2} link={link2} icon="mail"> </Button>}   
+        {link && linkText && <Button color="#fe7f2d" hoverColor="#fff" text={linkText} link={link} icon="phone"> </Button>}
+        {link2 && linkText2 && <Button color="#fe7f2d" hoverColor="#fff" text={linkText2} link={link2} icon="mail"> </Button>}   
     </div>
 </div>
 
 <style define:vars={{cssURL}}>
     #hero{
         width: 100%;
-        height:calc(100vh - 160px);
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--cssURL);
+        height:calc(100vh - 80px);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), var(--cssURL);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        padding: 98px 160px 0px 160px;
+        padding: 60px 160px 0px 160px;
         /* row-gap: 5rem; */
     }
 
@@ -54,12 +54,12 @@ const cssURL = `url(/${imageURL})`;
     }
 
     .hero--text {
-        background: rgba(40, 66, 31, .8);
+        background: rgba(40, 66, 31, 0.9);
         /* border: 3px solid rgba(254, 127, 45, 1); */
-        border: 3px solid rgba(254, 127, 45, 1);
-        border-radius: 8px;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);top:0;
+        border: 0px solid rgba(254, 127, 45, 1);
+        border-radius: 6px;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);top:0;
         color: white;
         width: auto;
         align-self: flex-end;
@@ -119,7 +119,7 @@ const cssURL = `url(/${imageURL})`;
         }
     }
 
-    @media only screen and (max-height: 500px) { 
+    @media only screen and (max-height: 600px) { 
         #hero {
             row-gap: 32px;
             padding-top: 50px;
