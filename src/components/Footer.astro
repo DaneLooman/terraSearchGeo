@@ -1,9 +1,10 @@
 ---
 import { Icon } from 'astro-icon';
+import logoFooter from '../logoFooter.png';
 ---
 <footer>
     <div class="footer--main">
-        <img src="./logoFooter.png" alt="Circular Terrasearch Geophysical Logo. A globe with a man operating a ground penetrating radar and a UAV drone.">
+        <img src={logoFooter} alt="Circular Terrasearch Geophysical Logo. A globe with a man operating a ground penetrating radar and a UAV drone." height="145px" width="145px"/>
         <ul>
             <li><a href="tel:+8606177345">860-617-7345</a></li>
             <li><a href="mailto:Dave@TerrrasearchGeo.com">Dave@TerrrasearchGeo.com</a></li>
@@ -13,7 +14,7 @@ import { Icon } from 'astro-icon';
         <ul class="right">
             <li><a href="/">Home</a></li>
             <li><a href="/#services">Services</a></li>
-            <li><a href="">Archives</a></li>
+            <li><a href="/posts/">Archives</a></li>
             <li><a href="">About Us</a></li>
         </ul>
     </div>

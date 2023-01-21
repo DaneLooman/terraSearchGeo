@@ -5,6 +5,7 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { BlogPost } from "../../lib/contentful";
 import Footer from '../../components/Footer.astro';
 import Navbar from '../../components/Navbar.astro';
+import Layout from '../../layouts/Layout.astro';
 
 
 export async function getStaticPaths() {
@@ -44,17 +45,7 @@ const { content, title, date, type, imageUrl, imageDesc} = Astro.props;
 const cssURL = `url(/${imageUrl}?w=1100)`;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Terrasearch Geophysical</title>
-	</head>
-	<body>
-		<Navbar curPage="home"></Navbar>
+<Layout title="TerraSearchGeo">
 		<main>
       <div class="post">
         <div class="post--title">
@@ -63,9 +54,7 @@ const cssURL = `url(/${imageUrl}?w=1100)`;
         <article class="content" set:html={content} />
       </div> 
     </main>
-		<Footer></Footer>
-	</body>
-</html>
+</Layout>
 
 <style define:vars={{cssURL}}>
   body {
@@ -77,10 +66,11 @@ const cssURL = `url(/${imageUrl}?w=1100)`;
     justify-content: center;
     align-items: center;
     text-align: left;
-		padding: 0px 0px 32px 0px;
+		padding: 60px 0px 32px 0px;
 		width: 100%;
     background-color: #FBFBF8;
 	}
+
   .post{
     max-width: 1100px;
     width: 100%;
@@ -88,13 +78,13 @@ const cssURL = `url(/${imageUrl}?w=1100)`;
 
   .post--title{
     width:100%;
-    padding-top: 40%;
+    padding-top: 30%;
     position:relative;
     background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), var(--cssURL); 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 48px;
+    margin-bottom: 16px;
    }
 
    h1{
@@ -122,6 +112,7 @@ const cssURL = `url(/${imageUrl}?w=1100)`;
 
   .post > .content :global( > *:not(figure)){
     font-family: "Montserrat",sans-serif;
+    margin-top:2em;
   }
 
   .post > .content :global(p){
@@ -143,6 +134,7 @@ const cssURL = `url(/${imageUrl}?w=1100)`;
     flex-direction: column;
     align-items: center;
     text-align: left;
+    margin-top:2em;
   }
 
   .post > .content :global(figure > img){

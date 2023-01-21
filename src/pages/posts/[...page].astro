@@ -1,0 +1,111 @@
+---
+import { contentfulClient } from "../../lib/contentful.js";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import type { Document } from "@contentful/rich-text-types";
+import type { BlogPost } from "../../lib/contentful";
+import { findPathItemByKey } from 'astro/dist/core/render/route-cache';
+import Footer from '../../components/Footer.astro';
+import Navbar from '../../components/Navbar.astro';
+import Card from "../../components/Card.astro";
+import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/Button.astro";
+import { Icon } from "astro-icon";
+
+export async function getStaticPaths({paginate}){
+    const entries = await contentfulClient.getEntries<BlogPost>({
+        content_type: "blogPost"
+    });
+
+    const posts = entries.items.map((item) => {
+        const { title, date, description, slug, image, type } = item.fields;
+        return {
+            title,
+            slug,
+            description,
+            date: new Date(date).toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
+            imageDesc: image.fields.description,
+            imageURL: image.fields.file.url,
+            type
+        };
+     });
+    return paginate(posts, {
+        pageSize : 10,
+    })
+}
+
+const {page} = Astro.props;
+---
+
+<Layout title="TerraSearchGeo">
+	<main>
+        <div class="title"> 
+            <h1>News and Articles Archives</h1>
+            <div class="bar"></div>
+        </div>
+       
+        <div class="posts">
+            {page.data.map((post) => (
+                <Card href={`./posts/${post.slug}`}
+                    tag={post.type}
+                    title={post.title}
+                    body={post.description}
+                    imageUrl={post.imageURL}
+                    imageDesc={post.imageDesc}
+                    date={post.date}
+                ></Card>
+            ))}
+        </div>
+
+        <nav>
+            {page.url.prev && <a href={`${page.url.prev}`}><Icon pack="feather" name="chevron-left" /> Previous <div class="bar"></div></a>}
+            {page.url.next &&<a href={`${page.url.next}`}>Next <Icon pack="feather" name="chevron-right" /><div class="bar"></div></a> }
+        </nav>
+	</main>
+</Layout>
+
+<style>
+    main{
+        padding: 92px 16px 32px 16px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    :global(h1){
+        font-size: 3rem;
+        color: #375B2B;
+        font-weight: 400;
+    }
+    .bar{
+        height: 2px;
+        width: 95%;
+        margin: 2px auto 3rem auto;
+        background-color: rgba(254,127,45,1);
+    }
+    nav {
+        display: flex;
+        gap: 40px;
+    }
+    a{
+        text-decoration: none;
+        color:#375B2B;
+        font-size: 24px;
+    }
+    a > .bar {
+        width:0px;
+        transition: all .5s ease;
+    }
+
+    [astro-icon] {
+        height:24px;
+        margin-right:0px;
+        margin-bottom:-4px;
+        display: inline-flex; 
+        flex-direction: row; 
+        align-items: end;
+    }
+
+    a:hover > .bar {
+        width: 95%;
+    }
+
+</style>
