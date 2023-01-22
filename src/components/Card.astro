@@ -10,6 +10,13 @@ export interface Props {
 }
 
 const { href, title, tag, body, imageUrl, imageDesc,date } = Astro.props;
+
+let mainColor = "#28421f"
+if ( tag == "Field Study"){
+  mainColor = "#776248"
+} else if(tag == "Field Study" ){
+  mainColor = "#31425A"
+}
 ---
 
 <article class="postcard dark blue">
@@ -34,7 +41,14 @@ const { href, title, tag, body, imageUrl, imageDesc,date } = Astro.props;
 	</div>
 </article>
 
-<style>
+<style define:vars={{mainColor}}>
+
+/* 
+    #31425A -- Blue In the news
+    #28421f -- Green Annoucement
+    #776248 -- Tan Field Study
+    #251A0F -- Brown
+    */
 /* This pen */
 a, a:hover {
   text-decoration: none;
@@ -54,10 +68,7 @@ a, a:hover {
   width:100%;
 }
 .postcard.dark {
-  background-color: #e1e5ea;
-}
-.postcard .t-dark {
-  color: #18151f;
+  background-color: #FFFDFA ;
 }
 .postcard a {
   color: inherit;
@@ -72,6 +83,7 @@ a, a:hover {
 }
 .postcard .postcard__title {
   font-size: 1.75rem;
+  color:var(--mainColor)
 }
 .postcard .postcard__img {
   max-height: 180px;
@@ -87,7 +99,7 @@ a, a:hover {
   height: 10px;
   margin: 10px 0;
   border-radius: 5px;
-  background-color: #FE7F2D;
+  background-color:var(--mainColor);
   transition: width 0.2s ease;
 }
 .postcard .postcard__text {
@@ -112,7 +124,7 @@ a, a:hover {
 }
 .postcard .postcard__tagbox .tag__item {
   display: inline-block;
-  background: rgba(83, 83, 83, 1);
+  background: var(--mainColor);
   color:#fff;
   border-radius: 0px;
   padding: 4px 16px;
@@ -123,9 +135,16 @@ a, a:hover {
 }
 
 .postcard .postcard__tagbox .tag__item.readMore{
-  color: #000;
-  background: rgba(254, 127, 45, 1);
+  color: #fff;
+  background: var(--mainColor);
+  transition:box-shadow .25s ease;
 }
+
+
+.postcard .postcard__tagbox .tag__item.readMore:hover {
+  box-shadow: 0 0 5px rgba(33,33,33,.5); 
+}
+
 
 
 .postcard:before {
@@ -135,7 +154,7 @@ a, a:hover {
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: linear-gradient(-70deg, #424242, transparent 50%);
+  /* background-image: linear-gradient(-70deg, #424242, transparent 50%); */
   opacity: 1;
   border-radius: 10px;
 }
@@ -207,37 +226,33 @@ a, a:hover {
   }
 
   .postcard.dark .postcard__text:before {
-    background: #e1e5ea;
+    background: #FFFDFA ; 
   }
 }
 /* COLORS */
 .postcard .postcard__tagbox .blue.play:hover {
-  background: #e57229;
-}
-
-.blue .postcard__title:hover {
+  background: var(--mainColor);
 }
 
 .blue .postcard__bar {
-  background-color: rgba(254, 127, 45, 1);
+  background-color: var(--mainColor);
 }
 
 .blue::before {
-  background-image: linear-gradient(-30deg, rgba(55, 91, 43, .4), transparent 50%);
+  background-image: linear-gradient(-30deg, var(--mainColor), transparent 50%);
 }
 
 .blue:nth-child(2n)::before {
-  background-image: linear-gradient(30deg, rgba(55, 91, 43, .4), transparent 50%);
+  background-image: linear-gradient(30deg, var(--mainColor), transparent 50%);
 }
 
 @media screen and (min-width: 769px) {
   .blue::before {
-    background-image: linear-gradient(-80deg, rgba(55, 91, 43, .4), transparent 50%);
+   background-image: linear-gradient(-80deg, var(--color), transparent 5%);
   }
 
   .blue:nth-child(2n)::before {
-    
-    background-image: linear-gradient(80deg, rgba(55, 91, 43, .4), transparent 50%);
+    background-image: linear-gradient(80deg, var(--color), transparent 5%);
   }
 }
 </style>
