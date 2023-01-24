@@ -109,14 +109,12 @@ import { Icon } from 'astro-icon';
     anchors.forEach((a) => {
         a.addEventListener('click', (e) => {
             document.querySelectorAll('.selected').forEach(function(node) {
-                node.classList.toggle("selected")
+                node.classList.remove("selected")
             });;
+            
+            a.classList.add("selected")
 
-            let filteredPath = e.path.filter(word => word.tagName == "A");
-
-            filteredPath[0].classList.add("selected")
-
-            let dataNum = filteredPath[0].dataset.servicecard - 1;
+            let dataNum = a.dataset.servicecard - 1;
 
             let cards = document.querySelectorAll('.service--info__card');
 
