@@ -1,0 +1,113 @@
+---
+import { Icon } from 'astro-icon';
+---
+<div id="call--container">
+    <div id="call">
+        <div id="call-title">
+            <h2>Ready to Explore?</h2>
+            <div class="bar"></div>
+        </div>
+        <p>Let our experts guide your project through history.</p>
+        <div class="buttons">
+            <a href="tel:555-666-7777"><Icon pack="feather" name="phone"/>304-123-9876<span class="slider"></span></a>
+            <a href="mailto:dave@TerrasearchGeo.com"><Icon pack="feather" name="mail"/>Email Us<span class="slider"></span></a>
+        </div> 
+    </div>
+</div>
+
+
+<style>
+    #call--container {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        background-color: #375B2B;
+        background-image: url("BG-topo-g.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+    #call {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width:fit-content;
+        padding:32px 16px;
+    }
+    #call-title > h2{
+        font-size: 3rem;
+        margin-bottom: 0;
+        color: #fff;
+    }
+
+    #call-title > .bar{
+        width: calc(100% - 16px);
+        margin: 0 8px 24px 8px;
+        height: 3px;
+        border-radius: 5px;
+        background-color: #FE7F2D;
+    }
+    #call > p{
+        font-size:1.6rem;
+        color: #fff;
+        font-style: italic;
+        margin-bottom:24px;
+    }
+    #call > .buttons {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    #call > .buttons > a {
+        text-decoration: none; 
+        color:#fff;
+        font-size: 2rem;
+        position: relative;
+    }
+
+    [astro-icon] {
+        height: 2rem;
+        margin-right: 8px;
+        margin-bottom: -4px;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: end;
+        color: rgba(254,127,45,1);
+    }
+    .slider{
+        position: absolute;
+        display:block;
+        left: 0;
+        top:90%;
+        margin:4px auto;
+        height: 2px;
+        background-color: rgba(254, 127, 45, 1);
+        width: 0%;
+        transition: width .5s ease;
+    }
+    #call > .buttons > a:hover > .slider {
+        width: 100%;
+    }
+    @media only screen and (max-width: 750px) {
+        #call-title > h2{
+            font-size: 2rem;
+        }
+        #call > p{
+            font-size:1.4rem;
+            text-align: center;
+        }
+        #call > .buttons > a {
+            font-size: 1.4rem;
+        }
+
+        [astro-icon] {
+            height: 1.4rem;
+            margin-bottom:-2px;
+        }
+    }
+
+    
+</style>

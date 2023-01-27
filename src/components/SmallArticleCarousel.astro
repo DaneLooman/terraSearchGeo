@@ -26,7 +26,7 @@ const posts = entries.items.map((item) => {
 ---
 
 <div id="posts--container">
-  <div>
+  <div id="posts--container__title">
     <h2>Latest News & Articles</h2>
     <div class="postcard__bar"></div>
   </div>
@@ -46,12 +46,16 @@ const posts = entries.items.map((item) => {
 
 <style>
     h2{
-        text-align: center;
         font-weight: 400;
         font-size: 3rem;
         margin-bottom: 0;
         color: #375B2B;
     }
+    /* #posts--container__title {
+      align-self: flex-start;
+      margin-left:128px;
+    } */
+
     .postcard__bar{
         width: calc(100% - 16px);
         margin: 0 8px 48px 8px;

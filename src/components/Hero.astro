@@ -10,14 +10,19 @@ export interface Props {
     linkText?: string;
     link2?: string;
     linkText2?: string;
+    video:string;
 }
 
-const { title, title2, subTitle, imageURL, link, linkText, link2, linkText2, } = Astro.props;
+const { title, title2, subTitle, imageURL, link, linkText, link2, linkText2, video} = Astro.props;
 
 const cssURL = `url(/${imageURL})`;
+const videoURL = `url(/${video})`;
 ---
 
 <div id="hero">
+    <video autoplay="" id="heroVideo" loop="" muted="" poster={imageURL}>
+        <source src={video} type="video/mp4" />
+      </video>
     <div class="hero--text">
         <h1>{title}<br><span class="orange">{title2}</span></h1>
         <p>{subTitle}</p>
@@ -27,7 +32,9 @@ const cssURL = `url(/${imageURL})`;
 </div>
 
 <style define:vars={{cssURL}}>
+
     #hero{
+        position: relative;
         width: 100%;
         height:calc(100vh - 80px);
         background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), var(--cssURL);
@@ -39,6 +46,17 @@ const cssURL = `url(/${imageURL})`;
         justify-content: space-around;
         padding: 60px 160px 0px 160px;
         /* row-gap: 5rem; */
+    }
+    #hero > video {
+        position: absolute; 
+        right: 0; 
+        bottom: 0;
+        min-width: 100%; 
+        min-height: 100%;
+        width: auto; 
+        height: auto; 
+        background-size: cover;
+        overflow: hidden;
     }
 
     #hero h1 {
@@ -116,6 +134,9 @@ const cssURL = `url(/${imageURL})`;
         #hero h1{
             font-size: 1.6rem;
             line-height: 2.6rem;
+        }
+        #hero > video {
+            display: none;
         }
     }
 
