@@ -1,0 +1,73 @@
+---
+import Button from "./Button.astro";
+
+---
+
+<section id="about">
+    <div class="about--text">
+        <div class="title">
+            <h2>About Us</h2>
+            <div class="bar"></div>
+        </div>
+        
+        <p>Dr. Leslie and Mr. George started this company after recognizing the need for specialized geophysical work as a companion to Cultural Resource Management surveys required through Local, State, and Federal regulations as well as to provide services to academic and research based institutions. </p>
+        <p>Our staff are highly trained archaeologists with specialized geoarchaeology, geophysical, and geochemical experience, and we are dedicated to providing our clients with high-quality consulting services that are tailored to individual client and regulatory needs.</p>
+        <Button color="#fff" hoverColor="#fff" link="/about" text="Meet Our Team"></Button>
+    </div>
+    <div class="about--img"></div>
+</section>
+
+<style>
+#about{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.about--text{
+    max-width: 80%;
+    margin:auto;
+    padding:48px 0;
+}
+.about--text > .title {
+    width: fit-content;
+    margin-bottom:32px;
+}
+.about--text > .title > h2 {
+    font-size: 3rem;
+    margin-bottom: 0;
+    color: #375B2B;
+}
+.about--text > .title > .bar {
+    width: calc(100% - 16px);
+    margin: 0 8px;
+    height: 3px;
+    border-radius: 5px;
+    background-color: #375B2B;
+}
+.about--text > p {
+    font-size: 18px;
+    margin-bottom: 16px;
+    line-height: 30px;
+}
+.about--text > p:nth-of-type(2) {
+    margin-bottom: 32px;
+}
+.about--text > .btn {
+    margin: 32px 0 48px 0;
+}
+
+.about--img {
+    background-color: aqua;
+}
+
+@media only screen and (max-width: 999px) {
+    #about{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .about--img {
+        height:50vh;
+    }
+
+}
+
+</style>
