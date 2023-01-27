@@ -24,7 +24,7 @@ const tagFix = tag.replace(/\s/g, '');
 		<time datetime="2020-05-25 12:00:00"><Icon pack="feather" name="calendar"/>{date}</time>
 		<div class={`postcard__bar ${tagFix}__BgColor`}></div>
 		<div class="postcard__preview-txt">{body}</div>
-        <a href="#" class={`${tagFix}__Color readMore`}>Read More...</a>
+        <a href={href} class={`${tagFix}__Color readMore`}>Read More...</a>
 	</div>
 </article>
 
