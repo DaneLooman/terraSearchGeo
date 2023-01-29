@@ -4,6 +4,7 @@ import Button from "../components/Button.astro";
 export interface Props {
 	title: string;
     title2?: string;
+    title3?: string;
 	subTitle: string;
 	imageURL: string;
     link?: string;
@@ -13,7 +14,7 @@ export interface Props {
     video:string;
 }
 
-const { title, title2, subTitle, imageURL, link, linkText, link2, linkText2, video} = Astro.props;
+const { title, title2, title3, subTitle, imageURL, link, linkText, link2, linkText2, video} = Astro.props;
 
 const cssURL = `url(/${imageURL})`;
 const videoURL = `url(/${video})`;
@@ -24,7 +25,7 @@ const videoURL = `url(/${video})`;
         <source src={video} type="video/mp4" />
       </video>
     <div class="hero--text">
-        <h1>{title}<br><span class="orange">{title2}</span></h1>
+        <h1>{title}<span class="orange">{title2}</span><br>{title3}</h1>
         <p>{subTitle}</p>
         {link && linkText && <Button color="#fe7f2d" hoverColor="#fff" text={linkText} link={link} icon="phone"> </Button>}
         {link2 && linkText2 && <Button color="#fe7f2d" hoverColor="#fff" text={linkText2} link={link2} icon="mail"> </Button>}   
@@ -65,10 +66,12 @@ const videoURL = `url(/${video})`;
         color:white;
         margin-bottom:16px;
         line-height:5rem;
+        font-weight: 600;
     }
 
     .orange{
         color:rgba(254, 127, 45, 1);
+        font-weight: 800;
     }
 
     .hero--text {
@@ -127,14 +130,25 @@ const videoURL = `url(/${video})`;
     }
 
     @media only screen and (max-width: 800px) { 
+        #hero {
+            padding: 98px 0 0 0;
+        }
         .hero--text {
             padding:48px 8px;
-            
+            width:100%;
+            border-radius: 0;
         }
         #hero h1{
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             line-height: 2.6rem;
+            margin-bottom:24px;
         }
+
+        .hero--text > p {
+            margin: 0 0 40px 0;
+            max-width: 95%;
+        }
+
         #hero > video {
             display: none;
         }

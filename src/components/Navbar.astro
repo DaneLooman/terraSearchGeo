@@ -18,8 +18,8 @@ const { curPag } = Astro.props;
     <ul class="nav" id="nav--links">
       <li class="nav-item"><a href="/">Home<span class="slider"></span></a></li>
       <li class="nav-item"><a href="/#services">Services<span class="slider"></span></a></li>
-      <li class="nav-item"><a href="/posts">News & Articles<span class="slider"></span></a></li>
-      <li class="nav-item"><a href="#">About Us<span class="slider"></span></a></li>
+      <li class="nav-item"><a href="/posts/">News & Articles<span class="slider"></span></a></li>
+      <li class="nav-item"><a href="/about/">About Us<span class="slider"></span></a></li>
       <li class="nav-item"><a href="tel:555-666-7777"><Icon pack="feather" name="phone"/> 304-123-9876<span class="slider"></span></a></li>
       <li class="nav-item"><a href="mailto:dave@TerrasearchGeo.com"><Icon pack="feather" name="mail"/> Email Us<span class="slider"></span></a></li>
     </ul>
@@ -27,8 +27,8 @@ const { curPag } = Astro.props;
 <div id="mobileNav">
   <a href="/" class="mobileAnchor">Home</a>
   <a href="/#services" class="mobileAnchor">Services</a>
-  <a href="#" class="mobileAnchor">News & Articles</a>
-  <a href="#" class="mobileAnchor">About Us</a>
+  <a href="/posts/" class="mobileAnchor">News & Articles</a>
+  <a href="/about/" class="mobileAnchor">About Us</a>
   <a href="tel:555-666-7777" class="mobileAnchor"><Icon pack="feather" name="phone"/> 304-123-9876</a>
   <a href="mailto:dave@TerrasearchGeo.com" class="mobileAnchor"><Icon pack="feather" name="mail"/> Email Us</a>
 </div>
@@ -268,11 +268,9 @@ const { curPag } = Astro.props;
     const anchors = document.getElementsByClassName('mobileAnchor');
         for(var i = 0; i < anchors.length; i++) {
             var anchor = anchors[i];
-            anchor.onclick = function() {
+            anchor.addEventListener("click", function(){
               document.getElementById("mobile-menu").classList.toggle("is-active");
               document.getElementById("mobileNav").classList.toggle("show");
-            }
+            })
         }
-
-
 </script>

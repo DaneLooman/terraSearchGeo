@@ -45,7 +45,7 @@ const {page} = Astro.props;
        
         <div class="posts">
             {page.data.map((post) => (
-                <Card href={`./posts/${post.slug}`}
+                <Card href={`/posts/${post.slug}`}
                     tag={post.type}
                     title={post.title}
                     body={post.description}
