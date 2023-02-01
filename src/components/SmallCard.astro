@@ -17,7 +17,7 @@ const tagFix = tag.replace(/\s/g, '');
 ---
 
 <article class="postcard">
-	<a class="postcard__img_link" href={href} aria-description={imageDesc}></a>
+	<a class="postcard__img_link" href={href} aria-label={imageDesc}></a>
 	<div class={`postcard__text postcard__text__${tagFix}`}>
         <div class={tagFix}>{tag}</div>
 		<h3 class={`postcard__title`}><a href={href} class={`${tagFix}__Color`}>{title}</a></h3>
