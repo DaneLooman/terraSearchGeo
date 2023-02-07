@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+---
+
+<Layout title="TerraSearch Geophysical, LLC" description="TerraSearch Geophysical regularly conducts surveys for a wide range of archaeological and historic preservation projects.  We specialize in non-invasive remote sensing techniques that include Ground Penetrating Radar (GPR), magnetometer, Unmanned Aerial Vehicle (UAV), and LiDAR surveys, as well as minimally invasive surveys such as terrestrial and underwater coring.">
+	<main>
+        <img src="/404.svg" alt="Stick figure picture of a drone in a tree." width="400" height="326"/>
+        <h1>Looks like we lost you.</h1>
+        <h2><a href="/" aria-label="link to homepage of TerraSearch Geophysical, LLC.">Head back home.</a><div class="bar"></div></h2>
+	</main>
+</Layout>
+
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+    }
+
+    main > img {
+        margin-bottom: 64px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        color: #375B2B;
+    }
+    main > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    main > h2 > a {
+        font-size: 2rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        text-decoration: none;
+        color: #375B2B;
+        padding-top: 16px;
+    }
+
+    main > h2 > .bar {
+        height:2px;
+        background-color: rgba(254, 127, 45, 1);
+        width: 10%;
+        align-self: flex-start;
+        transition: all .5s ease;
+    }
+
+    main > h2:hover > .bar {
+        height:2px;
+        color: rgba(254, 127, 45, 1);
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 800px) { 
+        main > img {
+            margin-bottom: 32px;
+            height: 163px;
+            width: 200px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+            color: #375B2B;
+        }
+
+        main > h2 > a {
+            font-size: 1.8rem;
+        }
+        main > h2 > .bar {
+            width:100%;
+        }
+
+    }
+
+</style>
