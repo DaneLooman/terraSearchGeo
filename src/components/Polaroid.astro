@@ -14,7 +14,7 @@ const { src, alt, caption, className } = Astro.props;
 ---
 
 <div class={className + " polaroid"}>
-    <img src={src} alt={alt} width="300" height="400">
+    <img src={src} alt={alt} width="300" height="400" loading="lazy">
     <figcaption>{caption}</figcaption>
 </div>
 
