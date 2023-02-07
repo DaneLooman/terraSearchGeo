@@ -24,7 +24,8 @@ const videoURL = `url(/${video})`;
     <video autoplay="" id="heroVideo" loop="" muted="">
         <source src={video} type="video/mp4" />
         <img src={`/${imageURL}`} width="2000" height="1500" title="Your browser does not support the <video> tag" />
-      </video>
+    </video>
+    <img id="mobileHero" src="/hero-mobile.webp" width="800" height="1200" alt="Man running a GPR machine over a field in front of the ocean.  " />
     <div class="hero--text">
         <h1>{title}<span class="orange">{title2}</span><br>{title3}</h1>
         <p>{subTitle}</p>
@@ -49,7 +50,7 @@ const videoURL = `url(/${video})`;
         padding: 60px 160px 0px 160px;
         /* row-gap: 5rem; */
     }
-    img {
+    video > img {
         height: 1500px;
         width: 2000px;
     }
@@ -63,6 +64,18 @@ const videoURL = `url(/${video})`;
         object-fit: cover;
         background-size: cover;
         overflow: hidden;
+    }
+
+    #mobileHero {
+        position: absolute; 
+        right: 0; 
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-size: cover;
+        overflow: hidden;
+        display:none;
     }
 
     #hero h1 {
@@ -156,6 +169,10 @@ const videoURL = `url(/${video})`;
 
         #hero > video {
             display: none;
+        }
+
+        #mobileHero {
+            display:block;
         }
     }
 

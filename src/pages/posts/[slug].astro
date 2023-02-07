@@ -45,7 +45,7 @@ const { content, title, date, type, imageUrl, imageDesc} = Astro.props;
 const cssURL = `url(/${imageUrl}?w=1100)`;
 ---
 
-<Layout title={title}>
+<Layout title={title} description={title}>
 		<main>
       <div class="post">
         <div class="post--title">

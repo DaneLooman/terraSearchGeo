@@ -9,7 +9,7 @@ const { curPag } = Astro.props;
 ---
 
 <nav class="navbar" id="nav">
-    <a href="/"><img src="/logo-nav.png" alt="Globe Logo with man pushing radar machine." width="171" height="44"></a>
+    <a href="/"><img src="/nav.svg" alt="Globe Logo with man pushing radar machine." width="181" height="45"></a>
     <div class="menu-toggle" id="mobile-menu">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -55,7 +55,7 @@ const { curPag } = Astro.props;
 
 .navbar {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: auto 3fr;
   align-items: center;
   height: 60px;
   width:100%;
@@ -69,7 +69,7 @@ const { curPag } = Astro.props;
 }
 
 .navbar img {
-  height: 44px;
+  height: 45px;
   width: auto;
   justify-self: start;
   margin-left: 160px;

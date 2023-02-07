@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Callout from '../components/Callout.astro';
 ---
 
-<Layout title="About Our Team">
+<Layout title="About Our Team" description="TerraSearch Geophsyical, LLC's team of dedicated archeologists are led by Dr. David Leslie and Mr. David George. Together they have half a century of experience in the field. Learn more about them on this page.   ">
 	<main>
         <div id="hero">
             <h1 id="Hero--text">
@@ -23,7 +23,7 @@ import Callout from '../components/Callout.astro';
                     <li>Registered Professional Archaeologist</li>
                 </ul>         
             </div>
-            <div class="img" id="leslie--img"></div>  
+            <img src="/davel.webp" height="600" width="900" alt="Picture of David Leslie"/>
             <div class="bio">
                 <p>Dr. Leslie has over 15 years of geoarchaeological experience, completing over one hundred investigations under all phases of Section 106 work throughout the greater Northeast.  He is also the Director of Archaeological Research at Heritage Consultants, as well as a Research Scientist in the Department of Anthropology at the University of Connecticut and the President of the Archaeological Society of Connecticut.  Dr. Leslie is also actively participates on various boards of regional archaeological societies, including the Conference on New England Archaeology and Eastern State Archaeological Federation, and serves on the Editorial Board of the journal Northeast Anthropology. </p>
             </div>
@@ -40,7 +40,7 @@ import Callout from '../components/Callout.astro';
                     <li>Registered Professional Archaeologist</li>
                 </ul>
             </div>
-            <div class="img" id="george--img"></div>   
+            <img id="george--img" src="/daveg.webp" height="600" width="900" alt="Picture of David George"/>
             <div class="bio"> 
                 <p>
                     Mr. George has over 30 years of archaeological experience, completing hundreds of investigations under all phases of Section 106 work throughout the United States.  He is also the President and owner of Heritage Consultants, and brings a wealth of cultural resource management knowledge and experience to bear on all of TerraSearch's work.   
@@ -137,11 +137,13 @@ import Callout from '../components/Callout.astro';
         margin-bottom:24px;
     }
 
-    #people > .img {
-        background-color: #375B2B;
+    #people > img {
+        max-width: 100%;
+        max-height: 530px;
+        width:100%;
         object-fit: cover;
-        width: 100%;
-        height: 100%;
+        background-size: cover;
+        background-color: #d6cbb9;
     }
     #george--img{
         grid-column: 1 / 2;
