@@ -7,7 +7,7 @@ export interface Props {
 
 const { curPag } = Astro.props;
 ---
-<>
+
 <nav class="navbar" id="nav">
     <a href="/"><img src="/logo-nav.png" alt="Globe Logo with man pushing radar machine." width="171" height="44"></a>
     <div class="menu-toggle" id="mobile-menu">
@@ -259,7 +259,7 @@ const { curPag } = Astro.props;
 
 </style>
 
-<script>
+<script is:inline>
     document.getElementById("nav").addEventListener("click", function(){
         document.getElementById("mobile-menu").classList.toggle("is-active");
         document.getElementById("mobileNav").classList.toggle("show");
