@@ -1,13 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import Callout from '../components/Callout.astro';
 ---
 
-<Layout title="TerraSearchGeo">
+<Layout title="About Our Team">
 	<main>
         <div id="hero">
             <h1 id="Hero--text">
-                Led by <span>David Leslie</span> & <span>David George</span>, our team is composed of highly regarded experts in the field of geological and historical survey.
+                Led by <span>David Leslie</span> & <span>David George</span>, our team is composed of highly regarded experts in the fields of geoarcheology and historic preservation.
             </h1>
         </div>
         <div id="people">
@@ -17,21 +17,15 @@ import Layout from '../layouts/Layout.astro';
                     <div class="bar"></div>
                 </div>
                 <ul>
-                    <li>accredidation</li>
-                    <li>accredidation</li>
-                    <li>accredidation</li>
-                    <li>accredidation</li>
-                    <li>accredidation</li>
+                    <li>Bachelor of Arts in Sociology and Anthropology, Minor in Geography, West Virginia University, 2006</li>
+                    <li>Master of Arts in Anthropology, Florida Atlantic University, 2008</li>
+                    <li>Doctoral Degree in Anthropology, University of Connecticut, 2016</li>
+                    <li>Registered Professional Archaeologist</li>
                 </ul>         
             </div>
             <div class="img" id="leslie--img"></div>  
             <div class="bio">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non turpis vehicula, venenatis orci vehicula, lacinia nisi. Aliquam vel sodales libero, ac euismod lectus. Aliquam nisl dui, imperdiet quis ultricies non, molestie eu nisl. Sed aliquet ante lectus, vel tincidunt risus finibus nec. Pellentesque at mi vitae quam congue fermentum quis sit amet purus. Duis bibendum viverra augue eu pharetra. Nulla bibendum porttitor arcu at varius. Sed et ornare sem. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non turpis vehicula, venenatis orci vehicula, lacinia nisi. Aliquam vel sodales libero, ac euismod lectus. Aliquam nisl dui, imperdiet quis ultricies non, molestie eu nisl. Sed aliquet ante lectus, vel tincidunt risus finibus nec. Pellentesque at mi vitae quam congue fermentum quis sit amet purus. Duis bibendum viverra augue eu pharetra. Nulla bibendum porttitor arcu at varius. Sed et ornare sem. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                </p>
+                <p>Dr. Leslie has over 15 years of geoarchaeological experience, completing over one hundred investigations under all phases of Section 106 work throughout the greater Northeast.  He is also the Director of Archaeological Research at Heritage Consultants, as well as a Research Scientist in the Department of Anthropology at the University of Connecticut and the President of the Archaeological Society of Connecticut.  Dr. Leslie is also actively participates on various boards of regional archaeological societies, including the Conference on New England Archaeology and Eastern State Archaeological Federation, and serves on the Editorial Board of the journal Northeast Anthropology. </p>
             </div>
             <div class="creds">
                 <div class="creds--title">
@@ -39,22 +33,19 @@ import Layout from '../layouts/Layout.astro';
                     <div class="bar"></div>
                  </div>
                 <ul>
-                    <li>accredidation</li>
-                    <li>accredidation</li>
-                    <li>accredidation</li>
-                    <li>accredidation</li>
-                    <li>accredidation</li>
+                    <li>Bachelor of Science in Business Management, Ithaca College, 1990</li>
+                    <li>Master of Arts in Anthropology, University of Connecticut, 1992</li>
+                    <li>Introduction to Federal Projects and Historic Preservation Law, Section 106 Compliance, 1999</li>
+                    <li>Federal Energy Regulatory Commission, Environmental Report Preparation Seminar, 2003</li>
+                    <li>Registered Professional Archaeologist</li>
                 </ul>
             </div>
             <div class="img" id="george--img"></div>   
             <div class="bio"> 
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non turpis vehicula, venenatis orci vehicula, lacinia nisi. Aliquam vel sodales libero, ac euismod lectus. Aliquam nisl dui, imperdiet quis ultricies non, molestie eu nisl. Sed aliquet ante lectus, vel tincidunt risus finibus nec. Pellentesque at mi vitae quam congue fermentum quis sit amet purus. Duis bibendum viverra augue eu pharetra. Nulla bibendum porttitor arcu at varius. Sed et ornare sem. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non turpis vehicula, venenatis orci vehicula, lacinia nisi. Aliquam vel sodales libero, ac euismod lectus. Aliquam nisl dui, imperdiet quis ultricies non, molestie eu nisl. Sed aliquet ante lectus, vel tincidunt risus finibus nec. Pellentesque at mi vitae quam congue fermentum quis sit amet purus. Duis bibendum viverra augue eu pharetra. Nulla bibendum porttitor arcu at varius. Sed et ornare sem. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                </p>
-            </div>
+                    Mr. George has over 30 years of archaeological experience, completing hundreds of investigations under all phases of Section 106 work throughout the United States.  He is also the President and owner of Heritage Consultants, and brings a wealth of cultural resource management knowledge and experience to bear on all of TerraSearch's work.   
+                 </p>
+            </div> 
         </div>
     </main>
 </Layout>
@@ -121,11 +112,11 @@ import Layout from '../layouts/Layout.astro';
 
     .creds > ul {
         list-style-type: none;
-        padding:16px;
+        padding:24px 0px 0 0px;
     }
 
     .creds  ul  li {
-        margin-bottom:8px;
+        margin-bottom:24px;
     }
 
     .bio {
