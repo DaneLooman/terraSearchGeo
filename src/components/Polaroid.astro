@@ -14,7 +14,7 @@ const { src, alt, caption, className } = Astro.props;
 ---
 
 <div class={className + " polaroid"}>
-    <img src={src} alt={alt}>
+    <img src={src} alt={alt} width="300" height="400">
     <figcaption>{caption}</figcaption>
 </div>
 
@@ -28,6 +28,7 @@ const { src, alt, caption, className } = Astro.props;
         grid-template-rows: 1fr auto;
         row-gap: 16px;
         box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.25);
+        width:332px;
     }
     .polaroid > img {
         width: 100%;
