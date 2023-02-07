@@ -12,7 +12,7 @@ export interface Props {
 
 const { href, title, tag, body, imageUrl, imageDesc,date } = Astro.props;
 
-const cssURL = `url(/${imageUrl}?w=330)`;
+const cssURL = `url(${imageUrl}?w=330)`;
 const tagFix = tag.replace(/\s/g, '');
 ---
 

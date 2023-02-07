@@ -36,7 +36,7 @@ const posts = entries.items.map((item) => {
             tag={post.type}
             title={post.title}
             body={post.description}
-            imageUrl={post.imageURL}
+            imageUrl={'https://' + post.imageURL}
             imageDesc={post.imageDesc}
             date={post.date}
         ></SmallCard>
