@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 
   function renderImage(node){
     let data = node.data.target.fields
-    return `<img src="https://${data.file.url}?&w=1100" alt="${data.description}"><figcaption>${data.description}</figcaption>`
+    return `<img src="https://${data.file.url}?&w=1100&fm=webp" alt="${data.description}"><figcaption>${data.description}</figcaption>`
 
   }
 
