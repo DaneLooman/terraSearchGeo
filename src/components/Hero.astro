@@ -21,7 +21,7 @@ const videoURL = `url(/${video})`;
 ---
 
 <div id="hero">
-    <video id="heroVideo" loop="" muted="" autoplay="">
+    <video id="heroVideo" loop="" muted="">
         <source src={video} type="video/mp4" />
         <img src={`/${imageURL}`} width="2000" height="1500" title="Your browser does not support the <video> tag" />
     </video>
@@ -204,7 +204,7 @@ const videoURL = `url(/${video})`;
     
 </style>
 
-<!-- <script is:inline>
+<script is:inline>
     var videoLocation  = document.getElementById("heroVideo");
 	window.onload = addAutoplay(videoLocation);	
 	function addAutoplay(element) {
@@ -213,4 +213,4 @@ const videoURL = `url(/${video})`;
 	  };
 	}
 
-</script> -->
+</script>

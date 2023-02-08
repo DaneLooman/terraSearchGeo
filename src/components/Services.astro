@@ -37,7 +37,7 @@ import { Icon } from 'astro-icon';
         <div id="service-1" class="service--info__card">
             <div class="service--textContain">
                 <h3>Ground Penetrating Radar</h3>
-                <p>Ground Penetrating Radar surveys are a non-invasive way to measure the differences in dielectric properties of buried materials and layers of the earth; by measuring these properties, we can map out interruptions in soil sequences caused by human or natural processes. We regularly utilize a variety of GPR antennas to accurately map cemeteries, prospect for unmarked graves, and archaeological sites.
+                <p>Ground Penetrating Radar surveys are a non-invasive way to measure the differences in dielectric properties of buried materials and layers of the earth; by measuring these properties, we can map out interruptions in soil sequences caused by human or natural processes. We regularly utilize a variety of GPR antennas to accurately map cemeteries, prospect for unmarked graves, and archaeological sites. We regularly utilize a variety of <a href="https://www.geophysical.com/" aria-label="Link to Geophysical Survey Systems" target="_blank">Geophysical Survey Systems, Inc. (GSSI)</a> GPR antennas to accurately map cemeteries, prospect for unmarked graves, and archaeological sites.
                 </p>
                 <!-- <Button color="#FE7F2D" hoverColor="#fff" link="google.com" text="View Case Study" ></Button> -->
             </div>
@@ -274,6 +274,16 @@ import { Icon } from 'astro-icon';
 
     #services--picker__mobile {
         display:none;
+    }
+
+    #service-1 > .service--textContain > p > a {
+        color: #fff;
+        text-decoration-color: rgba(254,127,45,1);
+        transition: all .5s ease;
+    }
+
+    #service-1 > .service--textContain > p > a:hover {
+        color: #ccc;
     }
 
     @media only screen and (max-width: 1600px) {
