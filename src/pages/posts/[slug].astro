@@ -1,5 +1,6 @@
 ---
 import { BLOCKS } from '@contentful/rich-text-types';
+import { INLINES } from '@contentful/rich-text-types'
 import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { BlogPost } from "../../lib/contentful";
@@ -21,7 +22,15 @@ export async function getStaticPaths() {
 
   const options = {
     renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: (node) => `<figure>${renderImage(node)}</figure>`
+      [BLOCKS.EMBEDDED_ASSET]: (node) => `<figure>${renderImage(node)}</figure>`,
+      [INLINES.HYPERLINK]: (node) => {
+        console.log(node)
+        if((node.data.uri).includes("youtube.com/embed")) {
+          return `<iframe style="max-width:100%; max-height:60vh;" width="1020" height="630" src="${node.data.uri}"ç title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+        } else {
+          return `<a href="${node.data.uri}">${node.content[0].value}</a>`
+        }
+      }
     }
   }
 
@@ -121,6 +130,11 @@ const cssURL = `url(/${imageUrl}?w=1100)`;
     letter-spacing: 1px;
     line-height: 32px;
     font-family: 'Montserrat', sans-serif;
+  }
+
+  .content > :global(p:has(iframe)){
+    align-self: center;
+    aspect-ratio: 16 / 9;
   }
 
   .post > .content :global(figure){
