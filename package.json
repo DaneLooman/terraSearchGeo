@@ -14,9 +14,11 @@
     "@contentful/rich-text-html-renderer": "^15.13.1",
     "@fontsource/montserrat": "^4.5.13",
     "@fontsource/rock-salt": "^4.5.8",
+    "@google/model-viewer": "^3.1.1",
     "astro": "^2.0.2",
     "astro-icon": "^0.8.0",
     "contentful": "^9.2.13",
-    "esbuild": "0.17.4"
+    "esbuild": "0.17.4",
+    "three": "^0.151.2"
   }
 }

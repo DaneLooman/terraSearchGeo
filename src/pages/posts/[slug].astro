@@ -7,6 +7,9 @@ import type { BlogPost } from "../../lib/contentful";
 import Footer from '../../components/Footer.astro';
 import Navbar from '../../components/Navbar.astro';
 import Layout from '../../layouts/Layout.astro';
+import { ModelViewerElement } from '@google/model-viewer';
+import ModelViewerElementBase from '@google/model-viewer/lib/model-viewer-base';
+
 
 
 export async function getStaticPaths() {
@@ -16,17 +19,24 @@ export async function getStaticPaths() {
 
   function renderImage(node){
     let data = node.data.target.fields
-    return `<img src="https://${data.file.url}?&w=1100&fm=webp" alt="${data.description}"><figcaption>${data.description}</figcaption>`
-
+    if(data.file.contentType == "model/gltf-binary"){
+      return`<figure><model-viewer src="https:${data.file.url}" alt="${data.description}" style="width:100%; height: 40vh;"  camera-controls shadow-intensity="1" auto-rotate>
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div></model-viewer><figcaption>${data.description}</figcaption></figure>`
+    } else {
+      return `<figure><img src="https://${data.file.url}?&w=1100&fm=webp" alt="${data.description}"><figcaption>${data.description}</figcaption></figure>`
+    }
+    
   }
+
 
   const options = {
     renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: (node) => `<figure>${renderImage(node)}</figure>`,
+      [BLOCKS.EMBEDDED_ASSET]: (node) => `${renderImage(node)}`,
       [INLINES.HYPERLINK]: (node) => {
-        console.log(node)
         if((node.data.uri).includes("youtube.com/embed")) {
-          return `<iframe style="max-width:100%; max-height:60vh;" width="1020" height="630" src="${node.data.uri}"ç title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+          return `<iframe style="max-width:100%; max-height:60vh;" width="1020" height="630" src="${node.data.uri}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
         } else {
           return `<a href="${node.data.uri}">${node.content[0].value}</a>`
         }
@@ -66,6 +76,7 @@ const cssURL = `url(/${imageUrl}?w=1100)`;
 </Layout>
 
 <style define:vars={{cssURL}}>
+
   body {
     margin:0;
   }
@@ -76,7 +87,7 @@ const cssURL = `url(/${imageUrl}?w=1100)`;
     align-items: center;
     text-align: left;
 		padding: 60px 0px 32px 0px;
-		width: 100%;
+		width: 100%; 
     background-color: #FBFBF8;
 	}
 
