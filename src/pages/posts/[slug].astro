@@ -7,10 +7,6 @@ import type { BlogPost } from "../../lib/contentful";
 import Footer from '../../components/Footer.astro';
 import Navbar from '../../components/Navbar.astro';
 import Layout from '../../layouts/Layout.astro';
-import { ModelViewerElement } from '@google/model-viewer';
-import ModelViewerElementBase from '@google/model-viewer/lib/model-viewer-base';
-
-
 
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<BlogPost>({
@@ -20,10 +16,8 @@ export async function getStaticPaths() {
   function renderImage(node){
     let data = node.data.target.fields
     if(data.file.contentType == "model/gltf-binary"){
-      return`<figure><model-viewer src="https:${data.file.url}" alt="${data.description}" style="width:100%; height: 40vh;"  camera-controls shadow-intensity="1" auto-rotate>
-    <div class="progress-bar hide" slot="progress-bar">
-        <div class="update-bar"></div>
-    </div></model-viewer><figcaption>${data.description}</figcaption></figure>`
+      return`<figure><model-viewer src="https:${data.file.url}" alt="${data.description}" style="width:100%; height: 50vh;"  camera-controls shadow-intensity="1" auto-rotate>
+        </model-viewer><figcaption>${data.description}</figcaption></figure>`
     } else {
       return `<figure><img src="https://${data.file.url}?&w=1100&fm=webp" alt="${data.description}"><figcaption>${data.description}</figcaption></figure>`
     }
