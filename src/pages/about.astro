@@ -7,7 +7,7 @@ import Callout from '../components/Callout.astro';
 	<main>
         <div id="hero">
             <h1 id="Hero--text">
-                Led by <span>David Leslie</span> & <span>David George</span>, our team is composed of highly regarded experts in the fields of geoarcheology and historic preservation.
+                Led by <span>David Leslie</span>, <span>David Givens</span>, & <span>David George</span>, our team is composed of highly regarded experts in the fields of geoarcheology and historic preservation.
             </h1>
         </div>
         <div id="people">
@@ -21,12 +21,33 @@ import Callout from '../components/Callout.astro';
                     <li>Master of Arts in Anthropology, Florida Atlantic University, 2008</li>
                     <li>Doctoral Degree in Anthropology, University of Connecticut, 2016</li>
                     <li>Registered Professional Archaeologist</li>
+                    <li><a href="mailto:DLeslie@terrasearchgeo.com">DLeslie@TerraSearchGeo.com</a></li>
                 </ul>         
             </div>
             <img src="/davel.webp" height="600" width="900" alt="Picture of David Leslie"/>
             <div class="bio">
                 <p>Dr. Leslie has over 15 years of geoarchaeological experience, completing over one hundred investigations under all phases of Section 106 work throughout the greater Northeast.  He is also the Director of Archaeological Research at Heritage Consultants, as well as a Research Scientist in the Department of Anthropology at the University of Connecticut and the President of the Archaeological Society of Connecticut.  Dr. Leslie also actively participates on various boards of regional archaeological societies, including the Conference on New England Archaeology and Eastern State Archaeological Federation, and serves on the Editorial Board of the journal Northeast Anthropology. </p>
             </div>
+            <div class="creds">
+                <div class="creds--title">
+                    <h2>David Givens, MA</h2>
+                    <div class="bar"></div>
+                 </div>
+                <ul>
+                    <li>Bachelor of Arts in Anthropology, Virginia Commonwealth University,1992</li>
+                    <li>Research Assistant, Russian Academy of Sciences, 1992</li>
+                    <li>Post Graduate Certificate in Geographic and Information Systems, Manchester Metropolitan University, 2008</li>
+                    <li>Master of Arts (Distinction) in Historical Archaeology, Leicester University, 2015</li>
+                    <li>NEPA and Section 106 Training, 2017</li>
+                    <li><a href="mailto:DGivens@terrasearchgeo.com">DGivens@TerraSearchGeo.com</a></li>
+                </ul>
+            </div>
+            <img id="george--img" src="/DaveGivens.webp" height="100%" width="auto" alt="Picture of David Givens"/>
+            <div class="bio"> 
+                <p>
+                    Mr. Givens has over eight years of experience in geophysics and over 30 years of expertise in Historical Archaeology in the Chesapeake region. Before joining TerraSearch, he served as Director of Archaeology at Jamestown, overseeing the excavation of English America’s first permanent settlement. Mr. Givens has co-authored and published numerous topics on Jamestown and Colonial America and his recent works include Angela: Jamestown and the First Africans (2022), Church & State: The Archaeology of the Foundations of Democracy (2020), 1619 – 2019: Democracy, Diversity, Discovery (2019), Holy Ground: Archaeology, Religion, and the First Founders of Jamestown (2016), and Jane: Starvation, Cannibalism, and Endurance at Jamestown (2013).                 </p>
+            </div> 
+
             <div class="creds">
                 <div class="creds--title">
                     <h2>David George, MA, RPA</h2>
@@ -38,14 +59,16 @@ import Callout from '../components/Callout.astro';
                     <li>Introduction to Federal Projects and Historic Preservation Law, Section 106 Compliance, 1999</li>
                     <li>Federal Energy Regulatory Commission, Environmental Report Preparation Seminar, 2003</li>
                     <li>Registered Professional Archaeologist</li>
+                    <li><a href="mailto:DGeorge@terrasearchgeo.com">DGeorge@TerraSearchGeo.com</a></li>
                 </ul>
             </div>
-            <img id="george--img" src="/daveg.webp" height="600" width="900" alt="Picture of David George"/>
+            <img id="georgeGivens--img" src="/daveg.webp" height="600" width="900" alt="Picture of David George"/>
             <div class="bio"> 
                 <p>
                     Mr. George has over 30 years of archaeological experience, completing hundreds of investigations under all phases of Section 106 work throughout the United States.  He is also the President and owner of Heritage Consultants, and brings a wealth of cultural resource management knowledge and experience to bear on all of TerraSearch's work.   
                  </p>
             </div> 
+            
         </div>
     </main>
 </Layout>
@@ -85,9 +108,11 @@ import Callout from '../components/Callout.astro';
         grid-auto-flow: row dense;
         position: relative;
         height: fit-content;
+        background-color: #f2e9d1;
     }
     .creds {
         padding:72px 80px;
+        background-color: #fff;
     }
 
     .creds--title {
@@ -148,6 +173,22 @@ import Callout from '../components/Callout.astro';
     #george--img{
         grid-column: 1 / 2;
         grid-row: 3 / 4;
+        width:auto !important;
+        justify-self: center;
+    }
+    .creds > ul > li > a {
+        display: block;
+        margin-top:40px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color:#375B2B;
+        text-decoration-color: rgba(254, 127, 45, 1);
+        text-decoration: none;
+    }
+    .creds > ul > li > a:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: rgba(254, 127, 45, 1);
     }
 
     @media only screen and (max-width: 999px) { 
@@ -185,6 +226,11 @@ import Callout from '../components/Callout.astro';
         .bio {
             grid-column: span 1;
             padding: 24px;
+        }
+        .creds > ul > li > a {
+            text-decoration: underline;
+            text-decoration-color: rgba(254, 127, 45, 1);
+
         }
 
     }
